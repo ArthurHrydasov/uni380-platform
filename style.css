@@ -1,0 +1,268 @@
+.button_toxic.past_lesson {
+    background: #c0c0c0 !important;
+  }
+  .button_toxic.continue_lesson {
+    background: #3e3af1 !important;
+    color: #fafafa !important;
+  }
+  .answer_visible_flex {
+    display: flex !important;
+  }
+  .youtube_wrapper {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+  }
+  .custom_side_buttons.active {
+    font-weight: 500;
+  }
+  .spoiler_block_bottom {
+    max-height: 0px;
+    transition: max-height 0.5s ease-in-out;
+  }
+  .bd_info_block {
+    display: none;
+  }
+  .task_input.blocked,
+  .profile_block .task_input_check_block.blocked,
+  .custom_log_wrapper.blocked {
+    pointer-events: none;
+  }
+  .noAvatar {
+    background-image: none;
+    background-color: #3e3af1 !important;
+  }
+  .hideButton {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .lesson_tab.intro,
+  .lesson_tab.tab1,
+  .lesson_tab.tab2,
+  .lesson_tab.tab3,
+  .lesson_tab.tab4 {
+    display: none;
+  }
+  .lesson_tab.active {
+    display: flex;
+  }
+  .lesson_tab.noactive {
+    display: none;
+  }
+  .middle_content.list_page {
+    display: none;
+  }
+  
+  /* ------------ Blop ------------ */
+  
+  .hide {
+    display: none !important;
+  }
+  
+  .blop,
+  .star_blop,
+  .container.footer_banner {
+    display: none !important;
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  .visible,
+  .next_visible,
+  .container.footer_banner.next_visible {
+    display: flex !important;
+  }
+  .blop.blop_animate,
+  .star_blop.blop_animate,
+  .container.footer_banner.blop_animate {
+    transition: all 0.3s ease-out;
+    opacity: 1;
+    transform: scale(1);
+  }
+  .answer_visible {
+    display: block !important;
+  }
+  .blop.done_blop .button_primal,
+  .blop.done_blop .variety_answer,
+  .blop.done_blop .variety_large {
+    display: none !important;
+  }
+  
+  a[state="blocked"] {
+    pointer-events: none;
+  }
+  
+  .blop.done_blop .check_input.true_variant .check_input_check {
+    border-color: #00a32d !important;
+  }
+  .blop.done_blop .check_input,
+  .blop.done_blop textarea {
+    pointer-events: none !important;
+  }
+  .blop.done_blop .check_input.true_variant .check_input_check {
+    border-color: #00a32d !important;
+  }
+  .blop.done_blop
+    .check_input.true_variant
+    .check_input_check
+    .check_icon
+    svg
+    path {
+    stroke: #00a32d !important;
+  }
+  .blop.done_blop .check_input.false_variant .check_input_check {
+    border-color: #d90000 !important;
+  }
+  .blop.done_blop
+    .check_input.false_variant
+    .check_input_check
+    .check_icon
+    svg
+    path {
+    stroke: #d90000 !important;
+  }
+  
+  .blop.done_blop .check_input.maybe_variant .check_input_check {
+    border-color: #f5bc0d !important;
+  }
+  .blop.done_blop
+    .check_input.maybe_variant
+    .check_input_check
+    .check_icon
+    svg
+    path {
+    stroke: #f5bc0d !important;
+  }
+  .answer_visible {
+    display: block !important;
+  }
+  .one,
+  .two,
+  .three,
+  .four,
+  .five,
+  .six,
+  .seven,
+  .eight,
+  .top_on_dialog {
+    display: none;
+  }
+  
+  /* ------------ Blop ------------ */
+  /* ------------ List ------------ */
+  
+  .custom_log {
+    display: flex !important;
+    justify-content: right !important;
+    align-items: center !important;
+  }
+  .lesson_item {
+    /* transition: all 0.3s ease-out; */
+  }
+  .lesson_item_wrapper.active .lesson_item {
+    background-color: #3c1ff0;
+    color: #ffffff;
+  }
+  .lesson_preview_img {
+    /* background: url("https://uploads-ssl.webflow.com/64ec9937cc02c6570f5b52f8/64f08f772e606765bf9dfed7_thumbnail1.webp"); */
+    background-size: cover !important;
+    background-position: center !important;
+  }
+  .lesson_item.disabled {
+    pointer-events: none;
+  }
+  .lesson_item.disabled .lesson_item_img {
+    -webkit-filter: grayscale(100%) brightness(80%) !important;
+    filter: grayscale(100%) brightness(80%) !important;
+  }
+  
+  /* ------------ List ------------ */
+  /* ------------ Side Bar ------------ */
+  
+  /* .side_bar_link { */
+  /* pointer-events: none;
+    }
+    .side_bar_link.available {
+      pointer-events: auto;
+    } */
+  .side_bar_links_block {
+    pointer-events: none;
+  }
+  .side_bar_links_block.available {
+    pointer-events: auto;
+  }
+  .side_bar_links_block.available .side_bar_link {
+    color: #212425;
+  }
+  .side_bar_links_block.active .side_bar_link {
+    font-weight: 700;
+  }
+  .side_bar_links_block.active .side_bar_sublinks_block {
+    display: flex;
+  }
+  
+  .side_bar_sublink_wrapper {
+    pointer-events: none;
+  }
+  .side_bar_sublink_wrapper.available {
+    pointer-events: auto;
+  }
+  .side_bar_sublink_wrapper.available .side_bar_sublink {
+    color: #212425;
+  }
+  .side_bar_sublink_wrapper.available .sublink_marker svg path {
+    fill: #3e3af1;
+  }
+  .side_bar_sublink_wrapper.active .side_bar_sublink {
+    font-weight: 700;
+  }
+  
+  /* ------------ Side Bar ------------ */
+  
+  /* ------------ Create ------------ */
+  
+  .task_input_block.error input {
+    border-color: #d90000;
+  }
+  .task_input_block .error_msg {
+    display: none;
+  }
+  .task_input_block.error .error_msg {
+    display: block;
+  }
+  
+  /* .task_input_block.error {
+      
+    } */
+  
+  @media screen and (max-width: 991px) {
+    .side_bar,
+    .page_substrate_close {
+      height: 101vh !important;
+      height: calc(var(--vh, 1vh) * 101) !important;
+    }
+    .side_bar {
+      transform: translateX(101vw);
+      /* opacity: 0; */
+      display: flex !important;
+      transition: transform 0.3s ease-out;
+    }
+    .page_substrate_close {
+      opacity: 0;
+      pointer-events: none;
+      display: flex !important;
+      transition: opacity 0.3s ease-out;
+    }
+    .side_bar.active {
+      transform: translateX(0);
+      /* opacity: 1; */
+    }
+    .page_substrate_close.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .lesson_item_wrapper.active .lesson_preview_item {
+      display: block;
+    }
+  }
+  
