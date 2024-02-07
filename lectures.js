@@ -322,6 +322,7 @@ if (url.includes("progress")) {
           var signalPoint = signalAnswer;
           signalPoint = tuskDonePoint(signalPoint);
           var task2_9;
+          console.log(signalAnswer);
           if (signalAnswer === "two") {
             task2_9 = ["two"];
           } else if (signalAnswer === "three") {
