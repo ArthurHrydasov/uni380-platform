@@ -401,34 +401,6 @@ if (url.includes("progress")) {
           '.middle_content[lesson="' + linkId + '"] .tasks_done'
         ).innerHTML = tasksDone;
 
-console.log(
-  answearTask1_1,
-  answearTask1_2,
-  answearTask1_3,
-  answearTask1_4,
-  answearTask1_5,
-  answearTask1_6,
-  answearTask1_7,
-  answearTask1_8,
-  answearTask1_10,
-  answearTask1_11,
-  answearTask1_12,
-  answearTask1_13,
-  answearTask1_15
-);
-
-console.log(
-  answearTask2_1,
-  answearTask2_2,
-  answearTask2_3,
-  answearTask2_4,
-  answearTask2_5,
-  answearTask2_6,
-  answearTask2_8,
-  answearTask2_9,
-  answearTask2_11
-);
-        
         var tasksPoints =
           answearTask1_1 +
           answearTask1_2 +
