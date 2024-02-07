@@ -322,13 +322,12 @@ if (url.includes("progress")) {
           var signalPoint = signalAnswer;
           signalPoint = tuskDonePoint(signalPoint);
           var task2_9;
-          console.log(signalAnswer);
           if (signalAnswer === "two") {
             task2_9 = ["two"];
           } else if (signalAnswer === "three") {
             task2_9 = ["three"];
           }
-          var answearTask2_9 = pointsCounter(structureAnswer, task2_9);
+          var answearTask2_9 = pointsCounter(signalAnswer, task2_9);
 
           var china_txtAnswer = tab2BDParts[10];
           var china_txtPoint = china_txtAnswer;
