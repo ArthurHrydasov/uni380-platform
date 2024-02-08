@@ -227,7 +227,11 @@ if (countProgressTab2 > 12) {
 function analystsCheck(value) {
   var analysts = document.querySelectorAll("[analysts]");
   if (value === "one") {
-    document.querySelector("[last_del]").remove();
+    // document.querySelector("[last_del]").remove();
+    var lastDelRemove = document.querySelector("[last_del]");
+    if (lastDelRemove) {
+      lastDelRemove.remove();
+    }
   } else if (value === "two") {
     analysts.forEach((element) => {
       element.remove();
