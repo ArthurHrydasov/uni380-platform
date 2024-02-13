@@ -368,6 +368,8 @@ function sideBarAvailable(customPass) {
               span.textContent = "задоволена";
             } else if (text === "почав") {
               span.textContent = "почала";
+            } else if (text === "говорив") {
+              span.textContent = "говорила";
             }
           });
         }
