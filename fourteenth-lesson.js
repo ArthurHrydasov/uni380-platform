@@ -108,15 +108,13 @@ if (countProgressTab1 > 47) {
 function radioCheck(blopElement) {
   var radio = blopElement.querySelector('input[type="radio"]:checked');
   if (blopElement.id === "sia_say") {
-    if (radio) {
+   if (radio) {
       var value = radio.value;
-      var elementsToRemove = document.querySelectorAll(
-        '[sia_say="' + value + '"]'
-      );
+      var elementsToRemove = document.querySelectorAll('[sia_say]:not([sia_say="' + value + '"])');
       elementsToRemove.forEach((elem) => {
         elem.remove();
       });
-    }
+    }  
   } else {
     if (radio) {
       var value = radio.value;
