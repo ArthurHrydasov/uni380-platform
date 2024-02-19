@@ -499,7 +499,7 @@ function tab1Progress(numberBlop) {
   }
   if (successAnswear !== "" && successAnswear !== undefined) {
     const successTask = document.getElementById("success");
-    checkboxGetInfo(successTask, successAnswear);
+    radioGetInfo(successTask, successAnswear);
   }
   if (reg_calcAnswear !== "" && reg_calcAnswear !== undefined) {
     const reg_calcTask = document.getElementById("reg_calc");
