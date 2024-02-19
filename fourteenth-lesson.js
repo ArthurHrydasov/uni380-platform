@@ -17,23 +17,22 @@ var tab2BDVal = tab2BD.textContent;
 tab2BDVal = tab2BDVal.split("|/|");
 
 var countProgressTab1 = tab1BDVal[0];
-// var percentAnswear = tab1BDVal[1];
-// var languageAnswear = tab1BDVal[2];
-// var answer_cplAnswear = tab1BDVal[3];
-// var criterionAnswear = tab1BDVal[4];
-// var criterion_chooseAnswear = tab1BDVal[5];
-// var main_criterionAnswear = tab1BDVal[6];
-// var factorAnswear = tab1BDVal[7];
-// var proposalAnswear = tab1BDVal[8];
-// var factors_txtAnswear = tab1BDVal[9];
-// var conclusionsAnswear = tab1BDVal[10];
-// var countryAnswear = tab1BDVal[11];
-// var country_chooseAnswear = tab1BDVal[12];
-// var factors_prioritiesAnswear = tab1BDVal[13];
-// var points_txtAnswear = tab1BDVal[14];
-// var country_pointsAnswear = tab1BDVal[15];
-// var research_txtAnswear = tab1BDVal[16];
-// var starAnswearTab1 = tab1BDVal[17];
+var china_knowAnswear = tab1BDVal[1];
+var team_endAnswear = tab1BDVal[2];
+var local_conAnswear = tab1BDVal[3];
+var china_thinkAnswear = tab1BDVal[4];
+var cheap_varAnswear = tab1BDVal[5];
+var domenAnswear = tab1BDVal[6];
+var socAnswear = tab1BDVal[7];
+var min_testAnswear = tab1BDVal[8];
+var blogersAnswear = tab1BDVal[9];
+var successAnswear = tab1BDVal[10];
+var reg_calcAnswear = tab1BDVal[11];
+var first_pay_calcAnswear = tab1BDVal[12];
+var retention_calcAnswear = tab1BDVal[13];
+var mashtabAnswear = tab1BDVal[14];
+var fail_doAnswear = tab1BDVal[15];
+var starAnswearTab1 = tab1BDVal[16];
 
 var countProgressTab2 = tab2BDVal[0];
 // var pestleAnswear = tab2BDVal[1];
@@ -131,125 +130,89 @@ function radioCheck(blopElement) {
   }
 }
 
-// function countryCheck() {
-//   var countryInfo = document.getElementById("country");
-//   var countryForm = countryInfo.querySelector("form");
-//   var countryElements = countryForm.querySelectorAll(".check_input");
+// min_test
 
-//   var countryFirst = countryElements[0].querySelector('input[type="checkbox"]');
-//   var countrySecond = countryElements[1].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var countryThird = countryElements[2].querySelector('input[type="checkbox"]');
-//   var countryFourth = countryElements[3].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var countryFiveth = countryElements[4].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var countrySixth = countryElements[5].querySelector('input[type="checkbox"]');
+function min_testCheck() {
+  var min_testInfo = document.getElementById("min_test");
+  var min_testForm = min_testInfo.querySelector("form");
+  var min_testElements = min_testForm.querySelectorAll(".check_input");
 
-//   var noElement = countryInfo.nextElementSibling.querySelector(".no");
-//   var maybeElement = countryInfo.nextElementSibling.querySelector(".maybe");
-//   var yesElement = countryInfo.nextElementSibling.querySelector(".yes");
+  var min_testFirst = min_testElements[0].querySelector(
+    'input[type="checkbox"]'
+  );
+  var min_testSecond = min_testElements[1].querySelector(
+    'input[type="checkbox"]'
+  );
+  var min_testThird = min_testElements[2].querySelector(
+    'input[type="checkbox"]'
+  );
+  var min_testFourth = min_testElements[3].querySelector(
+    'input[type="checkbox"]'
+  );
+  var min_testFiveth = min_testElements[4].querySelector(
+    'input[type="checkbox"]'
+  );
 
-//   if (
-//     !countryFirst.checked &&
-//     !countrySixth.checked &&
-//     (countrySecond.checked ||
-//       countryThird.checked ||
-//       countryFourth.checked ||
-//       countryFiveth.checked)
-//   ) {
-//     hideElements([yesElement, maybeElement]);
-//     showElement(noElement);
-//   } else if (
-//     countryFirst.checked &&
-//     countrySixth.checked &&
-//     !countrySecond.checked &&
-//     !countryThird.checked &&
-//     !countryFourth.checked &&
-//     !countryFiveth.checked
-//   ) {
-//     hideElements([noElement, maybeElement]);
-//     showElement(yesElement);
-//   } else {
-//     hideElements([noElement, yesElement]);
-//     showElement(maybeElement);
-//   }
-// }
+  var noElement = min_testInfo.nextElementSibling.querySelector(".no");
+  var maybeElement = min_testInfo.nextElementSibling.querySelector(".maybe");
+  var yesElement = min_testInfo.nextElementSibling.querySelector(".yes");
 
-// function criterion_chooseCheck() {
-//   var criterion_chooseInfo = document.getElementById("criterion_choose");
-//   var criterion_chooseForm = criterion_chooseInfo.querySelector("form");
-//   var criterion_chooseElements =
-//     criterion_chooseForm.querySelectorAll(".check_input");
+  if (
+    !min_testFirst.checked &&
+    !min_testSecond.checked &&
+    !min_testFiveth.checked &&
+    (min_testFourth.checked || min_testThird.checked)
+  ) {
+    hideElements([yesElement, maybeElement]);
+    showElement(noElement);
+  } else if (
+    min_testFirst.checked &&
+    min_testSecond.checked &&
+    min_testFiveth.checked &&
+    !min_testFourth.checked &&
+    !min_testThird.checked
+  ) {
+    hideElements([noElement, maybeElement]);
+    showElement(yesElement);
+  } else {
+    hideElements([noElement, yesElement]);
+    showElement(maybeElement);
+  }
+}
 
-//   var criterion_chooseFirst = criterion_chooseElements[0].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var criterion_chooseSecond = criterion_chooseElements[1].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var criterion_chooseThird = criterion_chooseElements[2].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var criterion_chooseFourth = criterion_chooseElements[3].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var criterion_chooseFiveth = criterion_chooseElements[4].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var criterion_chooseSixth = criterion_chooseElements[5].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var criterion_chooseSeventh = criterion_chooseElements[6].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var criterion_chooseEighth = criterion_chooseElements[7].querySelector(
-//     'input[type="checkbox"]'
-//   );
-//   var criterion_chooseNineth = criterion_chooseElements[8].querySelector(
-//     'input[type="checkbox"]'
-//   );
+function cheap_varCheck() {
+  var cheap_varInfo = document.getElementById("cheap_var");
+  var cheap_varForm = cheap_varInfo.querySelector("form");
+  var cheap_varElements = cheap_varForm.querySelectorAll(".check_input");
 
-//   var noElement = criterion_chooseInfo.nextElementSibling.querySelector(".no");
-//   var maybeElement =
-//     criterion_chooseInfo.nextElementSibling.querySelector(".maybe");
-//   var yesElement =
-//     criterion_chooseInfo.nextElementSibling.querySelector(".yes");
+  var cheap_varFirst = cheap_varElements[0].querySelector(
+    'input[type="checkbox"]'
+  );
+  var cheap_varSecond = cheap_varElements[1].querySelector(
+    'input[type="checkbox"]'
+  );
+  var cheap_varThird = cheap_varElements[2].querySelector(
+    'input[type="checkbox"]'
+  );
+  var cheap_varFourth = cheap_varElements[3].querySelector(
+    'input[type="checkbox"]'
+  );
 
-//   if (
-//     !criterion_chooseFirst.checked &&
-//     !criterion_chooseFourth.checked &&
-//     !criterion_chooseSixth.checked &&
-//     !criterion_chooseSeventh.checked &&
-//     (criterion_chooseSecond.checked ||
-//       criterion_chooseThird.checked ||
-//       criterion_chooseFiveth.checked ||
-//       criterion_chooseEighth.checked ||
-//       criterion_chooseNineth.checked)
-//   ) {
-//     hideElements([yesElement, maybeElement]);
-//     showElement(noElement);
-//   } else if (
-//     criterion_chooseFirst.checked &&
-//     criterion_chooseFourth.checked &&
-//     criterion_chooseSixth.checked &&
-//     criterion_chooseSeventh.checked &&
-//     !criterion_chooseSecond.checked &&
-//     !criterion_chooseThird.checked &&
-//     !criterion_chooseFiveth.checked &&
-//     !criterion_chooseEighth.checked &&
-//     !criterion_chooseNineth.checked
-//   ) {
-//     hideElements([noElement, maybeElement]);
-//     showElement(yesElement);
-//   } else {
-//     hideElements([noElement, yesElement]);
-//     showElement(maybeElement);
-//   }
-// }
+  var noElement = cheap_varInfo.nextElementSibling.querySelector(".no");
+  var yesElement = cheap_varInfo.nextElementSibling.querySelector(".yes");
+
+  if (
+    !cheap_varThird.checked &&
+    !cheap_varFourth.checked &&
+    (cheap_varFirst.checked || cheap_varSecond.checked)
+  ) {
+    hideElements(yesElement);
+    showElement(noElement);
+  } else {
+    hideElements(noElement);
+    showElement(yesElement);
+  }
+}
 
 function hideElements(elements) {
   elements.forEach(function (element) {
@@ -382,11 +345,11 @@ function tab1Progress(numberBlop) {
         }
       }
     });
-    // if (block && block.id === "criterion_choose") {
-    //   criterion_chooseCheck();
-    // } else if (block && block.id === "country") {
-    //   countryCheck();
-    // }
+    if (block && block.id === "cheap_var") {
+      cheap_varCheck();
+    } else if (block && block.id === "min_test") {
+      min_testCheck();
+    }
   }
 
   function starGetInfo(starBlock, bd_star_ratingVal) {
@@ -421,9 +384,64 @@ function tab1Progress(numberBlop) {
     radioCheck(block);
   }
 
+  //   function textareaGethInfo(block, value) {
+  //     var textarea = block.querySelector("textarea");
+  //     textarea.value = value;
+  //   }
+
   function textareaGethInfo(block, value) {
     var textarea = block.querySelector("textarea");
     textarea.value = value;
+
+    if (countProgressTab1 !== "") {
+      if (block.classList.contains("reg_calc")) {
+        function reg_calc(blop) {
+          var value = blop.querySelector("textarea").value;
+          var cleanedString = value.replace(/[^0-9.]/g, "");
+          var radioAnswer;
+          if (cleanedString === "4.3") {
+            radioAnswer = blop.nextElementSibling.querySelector(".one");
+            radioAnswer.classList.add("answer_visible");
+          } else {
+            radioAnswer = blop.nextElementSibling.querySelector(".two");
+            radioAnswer.classList.add("answer_visible");
+          }
+        }
+        reg_calc(block);
+      }
+    } else if (block.classList.contains("first_pay_calc")) {
+      function first_pay_calc(blop) {
+        var value = blop.querySelector("textarea").value;
+        var cleanedString = value.replace(/[^0-9.]/g, "");
+        var radioAnswer;
+        if (cleanedString === "19.96" || cleanedString === "20") {
+          radioAnswer = blop.nextElementSibling.querySelector(".one");
+          radioAnswer.classList.add("answer_visible");
+        } else {
+          radioAnswer = blop.nextElementSibling.querySelector(".two");
+          radioAnswer.classList.add("answer_visible");
+        }
+      }
+      first_pay_calc(block);
+    } else if (block.classList.contains("retention_calc")) {
+      function retention_calc(blop) {
+        var value = blop.querySelector("textarea").value;
+        var cleanedString = value.replace(/[^0-9.]/g, "");
+        var radioAnswer;
+        if (
+          cleanedString === "78.78" ||
+          cleanedString === "78.8" ||
+          cleanedString === "79"
+        ) {
+          radioAnswer = blop.nextElementSibling.querySelector(".one");
+          radioAnswer.classList.add("answer_visible");
+        } else {
+          radioAnswer = blop.nextElementSibling.querySelector(".two");
+          radioAnswer.classList.add("answer_visible");
+        }
+      }
+      retention_calc(block);
+    }
   }
 
   function dragGetInfo(block, value) {
@@ -443,81 +461,99 @@ function tab1Progress(numberBlop) {
     });
   }
 
-//   if (percentAnswear !== "" && percentAnswear !== undefined) {
-//     const percentTask = document.getElementById("percent");
-//     radioGetInfo(percentTask, percentAnswear);
-//   }
-//   if (languageAnswear !== "" && languageAnswear !== undefined) {
-//     const languageTask = document.getElementById("language");
-//     radioGetInfo(languageTask, languageAnswear);
-//   }
-//   if (answer_cplAnswear !== "" && answer_cplAnswear !== undefined) {
-//     const answer_cplTask = document.getElementById("answer_cpl");
-//     radioGetInfo(answer_cplTask, answer_cplAnswear);
-//   }
-//   if (criterionAnswear !== "" && criterionAnswear !== undefined) {
-//     const criterionTask = document.getElementById("criterion");
-//     radioGetInfo(criterionTask, criterionAnswear);
-//   }
-//   if (criterion_chooseAnswear !== "" && criterion_chooseAnswear !== undefined) {
-//     const criterion_chooseTask = document.getElementById("criterion_choose");
-//     checkboxGetInfo(criterion_chooseTask, criterion_chooseAnswear);
-//   }
-//   if (main_criterionAnswear !== "" && main_criterionAnswear !== undefined) {
-//     const main_criterionTask = document.getElementById("main_criterion");
-//     radioGetInfo(main_criterionTask, main_criterionAnswear);
-//   }
-//   if (factorAnswear !== "" && factorAnswear !== undefined) {
-//     const factorTask = document.getElementById("factor");
-//     radioGetInfo(factorTask, factorAnswear);
-//   }
-//   if (proposalAnswear !== "" && proposalAnswear !== undefined) {
-//     const proposalTask = document.getElementById("proposal");
-//     radioGetInfo(proposalTask, proposalAnswear);
-//   }
-//   if (factors_txtAnswear !== "" && factors_txtAnswear !== undefined) {
-//     const factors_txtTask = document.getElementById("factors_txt");
-//     textareaGethInfo(factors_txtTask, factors_txtAnswear);
-//   }
-//   if (conclusionsAnswear !== "" && conclusionsAnswear !== undefined) {
-//     const conclusionsTask = document.getElementById("conclusions");
-//     radioGetInfo(conclusionsTask, conclusionsAnswear);
-//   }
-//   if (countryAnswear !== "" && countryAnswear !== undefined) {
-//     const countryTask = document.getElementById("country");
-//     checkboxGetInfo(countryTask, countryAnswear);
-//   }
-//   if (country_chooseAnswear !== "" && country_chooseAnswear !== undefined) {
-//     const country_chooseTask = document.getElementById("country_choose");
-//     radioGetInfo(country_chooseTask, country_chooseAnswear);
-//   }
-//   if (
-//     factors_prioritiesAnswear !== "" &&
-//     factors_prioritiesAnswear !== undefined
-//   ) {
-//     const factors_prioritiesTask =
-//       document.getElementById("factors_priorities");
-//     dragGetInfo(factors_prioritiesTask, factors_prioritiesAnswear);
-//   }
-//   if (points_txtAnswear !== "" && points_txtAnswear !== undefined) {
-//     const points_txtTask = document.getElementById("points_txt");
-//     textareaGethInfo(points_txtTask, points_txtAnswear);
-//   }
-//   if (country_pointsAnswear !== "" && country_pointsAnswear !== undefined) {
-//     const country_pointsTask = document.getElementById("country_points");
-//     radioGetInfo(country_pointsTask, country_pointsAnswear);
-//   }
-//   if (research_txtAnswear !== "" && research_txtAnswear !== undefined) {
-//     const research_txtTask = document.getElementById("research_txt");
-//     textareaGethInfo(research_txtTask, research_txtAnswear);
-//   }
+  if (china_knowAnswear !== "" && china_knowAnswear !== undefined) {
+    const china_knowTask = document.getElementById("china_know");
+    checkboxGetInfo(china_knowTask, china_knowAnswear);
+  }
+  if (team_endAnswear !== "" && team_endAnswear !== undefined) {
+    const team_endTask = document.getElementById("team_end");
+    radioGetInfo(team_endTask, team_endAnswear);
+  }
+  if (local_conAnswear !== "" && local_conAnswear !== undefined) {
+    const local_conTask = document.getElementById("local_con");
+    radioGetInfo(local_conTask, local_conAnswear);
+  }
+  if (china_thinkAnswear !== "" && china_thinkAnswear !== undefined) {
+    const china_thinkTask = document.getElementById("china_think");
+    textareaGethInfo(china_thinkTask, china_thinkAnswear);
+  }
+  if (cheap_varAnswear !== "" && cheap_varAnswear !== undefined) {
+    const cheap_varTask = document.getElementById("cheap_var");
+    checkboxGetInfo(cheap_varTask, cheap_varAnswear);
+  }
+  if (domenAnswear !== "" && domenAnswear !== undefined) {
+    const domenTask = document.getElementById("domen");
+    radioGetInfo(domenTask, domenAnswear);
+  }
+  if (socAnswear !== "" && socAnswear !== undefined) {
+    const socTask = document.getElementById("soc");
+    checkboxGetInfo(socTask, socAnswear);
+  }
+  if (min_testAnswear !== "" && min_testAnswear !== undefined) {
+    const min_testTask = document.getElementById("min_test");
+    checkboxGetInfo(min_testTask, min_testAnswear);
+  }
+  if (blogersAnswear !== "" && blogersAnswear !== undefined) {
+    const blogersTask = document.getElementById("blogers");
+    textareaGethInfo(blogersTask, blogersAnswear);
+  }
+  if (successAnswear !== "" && successAnswear !== undefined) {
+    const successTask = document.getElementById("success");
+    checkboxGetInfo(successTask, successAnswear);
+  }
+  if (reg_calcAnswear !== "" && reg_calcAnswear !== undefined) {
+    const reg_calcTask = document.getElementById("reg_calc");
+    textareaGethInfo(reg_calcTask, reg_calcAnswear);
+  }
+  if (first_pay_calcAnswear !== "" && first_pay_calcAnswear !== undefined) {
+    const first_pay_calcTask = document.getElementById("first_pay_calc");
+    textareaGethInfo(first_pay_calcTask, first_pay_calcAnswear);
+  }
+  if (retention_calcAnswear !== "" && retention_calcAnswear !== undefined) {
+    const retention_calcTask = document.getElementById("retention_calc");
+    textareaGethInfo(retention_calcTask, retention_calcAnswear);
+  }
+  if (mashtabAnswear !== "" && mashtabAnswear !== undefined) {
+    const mashtabTask = document.getElementById("mashtab");
+    radioGetInfo(mashtabTask, mashtabAnswear);
+  }
+  if (fail_doAnswear !== "" && fail_doAnswear !== undefined) {
+    const fail_doTask = document.getElementById("fail_do");
+    radioGetInfo(fail_doTask, fail_doAnswear);
+  }
 
-//   if (starAnswearTab1 !== "" && starAnswearTab1 !== undefined) {
-//     starGetInfo(
-//       document.querySelector('div[tabs="tab1"] .star_blop'),
-//       starAnswearTab1
-//     );
-//   }
+  if (starAnswearTab1 !== "" && starAnswearTab1 !== undefined) {
+    starGetInfo(
+      document.querySelector('div[tabs="tab1"] .star_blop'),
+      starAnswearTab1
+    );
+  }
+
+  // china_knowAnswear
+  // team_endAnswear
+  // local_conAnswear
+  // china_thinkAnswear
+  // cheap_varAnswear
+  // domenAnswear
+  // socAnswear
+  // min_testAnswear
+  // blogersAnswear
+  // successAnswear
+  // reg_calcAnswear
+  // first_pay_calcAnswear
+  // retention_calcAnswear
+  // mashtabAnswear
+  // fail_doAnswear
+  // starAnswearTab1
+
+  //   if (
+  //     factors_prioritiesAnswear !== "" &&
+  //     factors_prioritiesAnswear !== undefined
+  //   ) {
+  //     const factors_prioritiesTask =
+  //       document.getElementById("factors_priorities");
+  //     dragGetInfo(factors_prioritiesTask, factors_prioritiesAnswear);
+  //   }
 
   window.scrollTo({
     top: document.documentElement.scrollHeight,
@@ -624,66 +660,66 @@ function tab2Progress(numberBlop) {
     });
   }
 
-//   if (pestleAnswear !== "" && pestleAnswear !== undefined) {
-//     const pestleTask = document.getElementById("pestle");
-//     radioGetInfo(pestleTask, pestleAnswear);
-//   }
-//   if (decisionAnswear !== "" && decisionAnswear !== undefined) {
-//     const decisionTask = document.getElementById("decision");
-//     radioGetInfo(decisionTask, decisionAnswear);
-//   }
-//   if (decision_twoAnswear !== "" && decision_twoAnswear !== undefined) {
-//     const decision_twoTask = document.getElementById("decision_two");
-//     radioGetInfo(decision_twoTask, decision_twoAnswear);
-//   }
-//   if (
-//     factors_priorities_twoAnswear !== "" &&
-//     factors_priorities_twoAnswear !== undefined
-//   ) {
-//     const factors_priorities_twoTask = document.getElementById(
-//       "factors_priorities_two"
-//     );
-//     dragGetInfo(factors_priorities_twoTask, factors_priorities_twoAnswear);
-//   }
-//   if (legal_factorsAnswear !== "" && legal_factorsAnswear !== undefined) {
-//     const legal_factorsTask = document.getElementById("legal_factors");
-//     radioGetInfo(legal_factorsTask, legal_factorsAnswear);
-//   }
-//   if (teamAnswear !== "" && teamAnswear !== undefined) {
-//     const teamTask = document.getElementById("team");
-//     radioGetInfo(teamTask, teamAnswear);
-//   }
-//   if (team_txtAnswear !== "" && team_txtAnswear !== undefined) {
-//     const team_txtTask = document.getElementById("team_txt");
-//     textareaGethInfo(team_txtTask, team_txtAnswear);
-//   }
-//   if (structureAnswear !== "" && structureAnswear !== undefined) {
-//     const structureTask = document.getElementById("structure");
-//     radioGetInfo(structureTask, structureAnswear);
-//   }
-//   if (signalAnswear !== "" && signalAnswear !== undefined) {
-//     const signalTask = document.getElementById("signal");
-//     radioGetInfo(signalTask, signalAnswear);
-//   }
-//   if (china_txtAnswear !== "" && china_txtAnswear !== undefined) {
-//     const china_txtTask = document.getElementById("china_txt");
-//     textareaGethInfo(china_txtTask, china_txtAnswear);
-//   }
-//   if (believeAnswear !== "" && believeAnswear !== undefined) {
-//     const believeTask = document.getElementById("believe");
-//     radioGetInfo(believeTask, believeAnswear);
-//   }
-//   if (china_risks_txtAnswear !== "" && china_risks_txtAnswear !== undefined) {
-//     const china_risks_txtTask = document.getElementById("china_risks_txt");
-//     textareaGethInfo(china_risks_txtTask, china_risks_txtAnswear);
-//   }
+  //   if (pestleAnswear !== "" && pestleAnswear !== undefined) {
+  //     const pestleTask = document.getElementById("pestle");
+  //     radioGetInfo(pestleTask, pestleAnswear);
+  //   }
+  //   if (decisionAnswear !== "" && decisionAnswear !== undefined) {
+  //     const decisionTask = document.getElementById("decision");
+  //     radioGetInfo(decisionTask, decisionAnswear);
+  //   }
+  //   if (decision_twoAnswear !== "" && decision_twoAnswear !== undefined) {
+  //     const decision_twoTask = document.getElementById("decision_two");
+  //     radioGetInfo(decision_twoTask, decision_twoAnswear);
+  //   }
+  //   if (
+  //     factors_priorities_twoAnswear !== "" &&
+  //     factors_priorities_twoAnswear !== undefined
+  //   ) {
+  //     const factors_priorities_twoTask = document.getElementById(
+  //       "factors_priorities_two"
+  //     );
+  //     dragGetInfo(factors_priorities_twoTask, factors_priorities_twoAnswear);
+  //   }
+  //   if (legal_factorsAnswear !== "" && legal_factorsAnswear !== undefined) {
+  //     const legal_factorsTask = document.getElementById("legal_factors");
+  //     radioGetInfo(legal_factorsTask, legal_factorsAnswear);
+  //   }
+  //   if (teamAnswear !== "" && teamAnswear !== undefined) {
+  //     const teamTask = document.getElementById("team");
+  //     radioGetInfo(teamTask, teamAnswear);
+  //   }
+  //   if (team_txtAnswear !== "" && team_txtAnswear !== undefined) {
+  //     const team_txtTask = document.getElementById("team_txt");
+  //     textareaGethInfo(team_txtTask, team_txtAnswear);
+  //   }
+  //   if (structureAnswear !== "" && structureAnswear !== undefined) {
+  //     const structureTask = document.getElementById("structure");
+  //     radioGetInfo(structureTask, structureAnswear);
+  //   }
+  //   if (signalAnswear !== "" && signalAnswear !== undefined) {
+  //     const signalTask = document.getElementById("signal");
+  //     radioGetInfo(signalTask, signalAnswear);
+  //   }
+  //   if (china_txtAnswear !== "" && china_txtAnswear !== undefined) {
+  //     const china_txtTask = document.getElementById("china_txt");
+  //     textareaGethInfo(china_txtTask, china_txtAnswear);
+  //   }
+  //   if (believeAnswear !== "" && believeAnswear !== undefined) {
+  //     const believeTask = document.getElementById("believe");
+  //     radioGetInfo(believeTask, believeAnswear);
+  //   }
+  //   if (china_risks_txtAnswear !== "" && china_risks_txtAnswear !== undefined) {
+  //     const china_risks_txtTask = document.getElementById("china_risks_txt");
+  //     textareaGethInfo(china_risks_txtTask, china_risks_txtAnswear);
+  //   }
 
-//   if (starAnswearTab2 !== "" && starAnswearTab2 !== undefined) {
-//     starGetInfo(
-//       document.querySelector('div[tabs="tab2"] .star_blop'),
-//       starAnswearTab2
-//     );
-//   }
+  //   if (starAnswearTab2 !== "" && starAnswearTab2 !== undefined) {
+  //     starGetInfo(
+  //       document.querySelector('div[tabs="tab2"] .star_blop'),
+  //       starAnswearTab2
+  //     );
+  //   }
 
   window.scrollTo({
     top: document.documentElement.scrollHeight,
@@ -705,8 +741,8 @@ primalButtons.forEach(function (button) {
       blopElement.classList.add("done_blop");
 
       radioCheck(blopElement);
-    //   criterion_chooseCheck();
-    //   countryCheck();
+      cheap_varCheck();
+      min_testCheck();
 
       blopElement.nextElementSibling.classList.add("next_visible");
       setTimeout(function () {
@@ -723,9 +759,9 @@ primalButtons.forEach(function (button) {
 
         var parent = button.closest(".lesson_tab").getAttribute("tabs");
 
-        // if (ss > 42 && parent === "tab1") {
-        //   availableLinks("thirteenthl_tab2");
-        // }
+        if (ss > 47 && parent === "tab1") {
+          availableLinks("fourteenthl_tab2");
+        }
       }
     }
     if (button.classList.contains("start_button")) {
@@ -887,6 +923,55 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
       let newStr = textareaNoEnter.replace(/\n/g, "");
       var selectedValue = newStr;
       var result = selectedValue;
+
+      if (block.classList.contains("reg_calc")) {
+        function reg_calc(blop) {
+          var value = blop.querySelector("textarea").value;
+          var cleanedString = value.replace(/[^0-9.]/g, "");
+          var radioAnswer;
+          if (cleanedString === "4.3") {
+            radioAnswer = blop.nextElementSibling.querySelector(".one");
+            radioAnswer.classList.add("answer_visible");
+          } else {
+            radioAnswer = blop.nextElementSibling.querySelector(".two");
+            radioAnswer.classList.add("answer_visible");
+          }
+        }
+        reg_calc(block);
+      } else if (block.classList.contains("first_pay_calc")) {
+        function first_pay_calc(blop) {
+          var value = blop.querySelector("textarea").value;
+          var cleanedString = value.replace(/[^0-9.]/g, "");
+          var radioAnswer;
+          if (cleanedString === "19.96" || cleanedString === "20") {
+            radioAnswer = blop.nextElementSibling.querySelector(".one");
+            radioAnswer.classList.add("answer_visible");
+          } else {
+            radioAnswer = blop.nextElementSibling.querySelector(".two");
+            radioAnswer.classList.add("answer_visible");
+          }
+        }
+        first_pay_calc(block);
+      } else if (block.classList.contains("retention_calc")) {
+        function retention_calc(blop) {
+          var value = blop.querySelector("textarea").value;
+          var cleanedString = value.replace(/[^0-9.]/g, "");
+          var radioAnswer;
+          if (
+            cleanedString === "78.78" ||
+            cleanedString === "78.8" ||
+            cleanedString === "79"
+          ) {
+            radioAnswer = blop.nextElementSibling.querySelector(".one");
+            radioAnswer.classList.add("answer_visible");
+          } else {
+            radioAnswer = blop.nextElementSibling.querySelector(".two");
+            radioAnswer.classList.add("answer_visible");
+          }
+        }
+        retention_calc(block);
+      }
+
       return result;
     }
 
@@ -902,10 +987,81 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
       return result;
     }
 
-    // if (buttonWithAttr.closest("#percent")) {
-    //   const percentTask = document.getElementById("percent");
-    //   var percentResult = radioPushInfo(percentTask);
-    // }
+    if (buttonWithAttr.closest("#china_know")) {
+      const china_knowTask = document.getElementById("china_know");
+      var china_knowResult = checkboxPushInfo(china_knowTask);
+    }
+    if (buttonWithAttr.closest("#team_end")) {
+      const team_endTask = document.getElementById("team_end");
+      var team_endResult = radioPushInfo(team_endTask);
+    }
+    if (buttonWithAttr.closest("#local_con")) {
+      const local_conTask = document.getElementById("local_con");
+      var local_conResult = radioPushInfo(local_conTask);
+    }
+    if (buttonWithAttr.closest("#china_think")) {
+      const china_thinkTask = document.getElementById("china_think");
+      var china_thinkResult = textareaPushInfo(china_thinkTask);
+    }
+    if (buttonWithAttr.closest("#cheap_var")) {
+      const cheap_varTask = document.getElementById("cheap_var");
+      var cheap_varResult = checkboxPushInfo(cheap_varTask);
+    }
+    if (buttonWithAttr.closest("#domen")) {
+      const domenTask = document.getElementById("domen");
+      var domenResult = radioPushInfo(domenTask);
+    }
+    if (buttonWithAttr.closest("#soc")) {
+      const socTask = document.getElementById("soc");
+      var socResult = checkboxPushInfo(socTask);
+    }
+    if (buttonWithAttr.closest("#min_test")) {
+      const min_testTask = document.getElementById("min_test");
+      var min_testResult = checkboxPushInfo(min_testTask);
+    }
+    if (buttonWithAttr.closest("#blogers")) {
+      const blogersTask = document.getElementById("blogers");
+      var blogersResult = textareaPushInfo(blogersTask);
+    }
+    if (buttonWithAttr.closest("#success")) {
+      const successTask = document.getElementById("success");
+      var successResult = radioPushInfo(successTask);
+    }
+    if (buttonWithAttr.closest("#reg_calc")) {
+      const reg_calcTask = document.getElementById("reg_calc");
+      var reg_calcResult = textareaPushInfo(reg_calcTask);
+    }
+    if (buttonWithAttr.closest("#first_pay_calc")) {
+      const first_pay_calcTask = document.getElementById("first_pay_calc");
+      var first_pay_calcResult = textareaPushInfo(first_pay_calcTask);
+    }
+    if (buttonWithAttr.closest("#retention_calc")) {
+      const retention_calcTask = document.getElementById("retention_calc");
+      var retention_calcResult = textareaPushInfo(retention_calcTask);
+    }
+    if (buttonWithAttr.closest("#mashtab")) {
+      const mashtabTask = document.getElementById("mashtab");
+      var mashtabResult = radioPushInfo(mashtabTask);
+    }
+    if (buttonWithAttr.closest("#fail_do")) {
+      const fail_doTask = document.getElementById("fail_do");
+      var fail_doResult = radioPushInfo(fail_doTask);
+    }
+
+    // china_knowResult
+    // team_endResult
+    // local_conResult
+    // china_thinkResult
+    // cheap_varResult
+    // domenResult
+    // socResult
+    // min_testResult
+    // successResult
+    // first_pay_calcResult
+    // retention_calcResult
+    // mashtabResult
+    // fail_doResult
+
     // if (buttonWithAttr.closest("#language")) {
     //   const languageTask = document.getElementById("language");
     //   var languageResult = radioPushInfo(languageTask);
@@ -934,10 +1090,7 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
     //   const proposalTask = document.getElementById("proposal");
     //   var proposalResult = radioPushInfo(proposalTask);
     // }
-    // if (buttonWithAttr.closest("#factors_txt")) {
-    //   const factors_txtTask = document.getElementById("factors_txt");
-    //   var factors_txtResult = textareaPushInfo(factors_txtTask);
-    // }
+
     // if (buttonWithAttr.closest("#conclusions")) {
     //   const conclusionsTask = document.getElementById("conclusions");
     //   var conclusionsResult = radioPushInfo(conclusionsTask);
@@ -1034,13 +1187,13 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
       };
       console.log(data);
 
-    //    fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
-    //      method: "POST",
-    //      headers: {
-    //        "Content-Type": "application/json",
-    //      },
-    //      body: JSON.stringify(data),
-    //    });
+      //    fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
+      //      method: "POST",
+      //      headers: {
+      //        "Content-Type": "application/json",
+      //      },
+      //      body: JSON.stringify(data),
+      //    });
       // .then((response) => response.json())
       // .then((data) => {
       //   console.log(data);
@@ -1074,47 +1227,190 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
       countProgressTab1 = attributeValue;
       countProgressTab2 = attributeValue;
 
-    //   var percentBd;
-    //   if (percentResult !== "" && percentResult !== undefined) {
-    //     percentAnswear = percentResult;
-    //     percentBd = "|/|" + percentAnswear;
-    //   } else if (percentAnswear !== "" && percentAnswear !== undefined) {
-    //     percentBd = "|/|" + percentAnswear;
-    //   } else {
-    //     percentBd = "";
-    //   }
+      var china_knowBd;
+      if (china_knowResult !== "" && china_knowResult !== undefined) {
+        china_knowAnswear = china_knowResult;
+        china_knowBd = "|/|" + china_knowAnswear;
+      } else if (china_knowAnswear !== "" && china_knowAnswear !== undefined) {
+        china_knowBd = "|/|" + china_knowAnswear;
+      } else {
+        china_knowBd = "";
+      }
+      var team_endBd;
+      if (team_endResult !== "" && team_endResult !== undefined) {
+        team_endAnswear = team_endResult;
+        team_endBd = "|/|" + team_endAnswear;
+      } else if (team_endAnswear !== "" && team_endAnswear !== undefined) {
+        team_endBd = "|/|" + team_endAnswear;
+      } else {
+        team_endBd = "";
+      }
+      var local_conBd;
+      if (local_conResult !== "" && local_conResult !== undefined) {
+        local_conAnswear = local_conResult;
+        local_conBd = "|/|" + local_conAnswear;
+      } else if (local_conAnswear !== "" && local_conAnswear !== undefined) {
+        local_conBd = "|/|" + local_conAnswear;
+      } else {
+        local_conBd = "";
+      }
+      var china_thinkBd;
+      if (china_thinkResult !== "" && china_thinkResult !== undefined) {
+        china_thinkAnswear = china_thinkResult;
+        china_thinkBd = "|/|" + china_thinkAnswear;
+      } else if (
+        china_thinkAnswear !== "" &&
+        china_thinkAnswear !== undefined
+      ) {
+        china_thinkBd = "|/|" + china_thinkAnswear;
+      } else {
+        china_thinkBd = "";
+      }
+      var cheap_varBd;
+      if (cheap_varResult !== "" && cheap_varResult !== undefined) {
+        cheap_varAnswear = cheap_varResult;
+        cheap_varBd = "|/|" + cheap_varAnswear;
+      } else if (cheap_varAnswear !== "" && cheap_varAnswear !== undefined) {
+        cheap_varBd = "|/|" + cheap_varAnswear;
+      } else {
+        cheap_varBd = "";
+      }
+      var domenBd;
+      if (domenResult !== "" && domenResult !== undefined) {
+        domenAnswear = domenResult;
+        domenBd = "|/|" + domenAnswear;
+      } else if (domenAnswear !== "" && domenAnswear !== undefined) {
+        domenBd = "|/|" + domenAnswear;
+      } else {
+        domenBd = "";
+      }
+      var socBd;
+      if (socResult !== "" && socResult !== undefined) {
+        socAnswear = socResult;
+        socBd = "|/|" + socAnswear;
+      } else if (socAnswear !== "" && socAnswear !== undefined) {
+        socBd = "|/|" + socAnswear;
+      } else {
+        socBd = "";
+      }
+      var min_testBd;
+      if (min_testResult !== "" && min_testResult !== undefined) {
+        min_testAnswear = min_testResult;
+        min_testBd = "|/|" + min_testAnswear;
+      } else if (min_testAnswear !== "" && min_testAnswear !== undefined) {
+        min_testBd = "|/|" + min_testAnswear;
+      } else {
+        min_testBd = "";
+      }
+      var successBd;
+      if (successResult !== "" && successResult !== undefined) {
+        successAnswear = successResult;
+        successBd = "|/|" + successAnswear;
+      } else if (successAnswear !== "" && successAnswear !== undefined) {
+        successBd = "|/|" + successAnswear;
+      } else {
+        successBd = "";
+      }
+      var first_pay_calcBd;
+      if (first_pay_calcResult !== "" && first_pay_calcResult !== undefined) {
+        first_pay_calcAnswear = first_pay_calcResult;
+        first_pay_calcBd = "|/|" + first_pay_calcAnswear;
+      } else if (
+        first_pay_calcAnswear !== "" &&
+        first_pay_calcAnswear !== undefined
+      ) {
+        first_pay_calcBd = "|/|" + first_pay_calcAnswear;
+      } else {
+        first_pay_calcBd = "";
+      }
+      var retention_calcBd;
+      if (retention_calcResult !== "" && retention_calcResult !== undefined) {
+        retention_calcAnswear = retention_calcResult;
+        retention_calcBd = "|/|" + retention_calcAnswear;
+      } else if (
+        retention_calcAnswear !== "" &&
+        retention_calcAnswear !== undefined
+      ) {
+        retention_calcBd = "|/|" + retention_calcAnswear;
+      } else {
+        retention_calcBd = "";
+      }
+      var mashtabBd;
+      if (mashtabResult !== "" && mashtabResult !== undefined) {
+        mashtabAnswear = mashtabResult;
+        mashtabBd = "|/|" + mashtabAnswear;
+      } else if (mashtabAnswear !== "" && mashtabAnswear !== undefined) {
+        mashtabBd = "|/|" + mashtabAnswear;
+      } else {
+        mashtabBd = "";
+      }
+      var fail_doBd;
+      if (fail_doResult !== "" && fail_doResult !== undefined) {
+        fail_doAnswear = fail_doResult;
+        fail_doBd = "|/|" + fail_doAnswear;
+      } else if (fail_doAnswear !== "" && fail_doAnswear !== undefined) {
+        fail_doBd = "|/|" + fail_doAnswear;
+      } else {
+        fail_doBd = "";
+      }
 
-//      var starTab1Bd;
-//      if (star1 !== "" && star1 !== undefined) {
-//        starAnswearTab1 = star1;
-//        starTab1Bd = "|/|" + starAnswearTab1;
-//      } else if (starAnswearTab1 !== "" && starAnswearTab1 !== undefined) {
-//        starTab1Bd = "|/|" + starAnswearTab1;
-//      } else {
-//        starTab1Bd = "";
-//      }
+      // china_knowBd
+      // team_endBd
+      // local_conBd
+      // china_thinkBd
+      // cheap_varBd
+      // domenBd
+      // socBd
+      // min_testBd
+      // successBd
+      // first_pay_calcBd
+      // retention_calcBd
+      // mashtabBd
+      // fail_doBd
+
+      var starTab1Bd;
+      if (star1 !== "" && star1 !== undefined) {
+        starAnswearTab1 = star1;
+        starTab1Bd = "|/|" + starAnswearTab1;
+      } else if (starAnswearTab1 !== "" && starAnswearTab1 !== undefined) {
+        starTab1Bd = "|/|" + starAnswearTab1;
+      } else {
+        starTab1Bd = "";
+      }
 
       // // ----------
 
-
-//      var starTab2Bd;
-//      if (star2 !== "" && star2 !== undefined) {
-//        starAnswearTab2 = star2;
-//        starTab2Bd = "|/|" + starAnswearTab2;
-//      } else if (starAnswearTab2 !== "" && starAnswearTab2 !== undefined) {
-//        starTab2Bd = "|/|" + starAnswearTab2;
-//      } else {
-//        starTab2Bd = "";
-//      }
+      //      var starTab2Bd;
+      //      if (star2 !== "" && star2 !== undefined) {
+      //        starAnswearTab2 = star2;
+      //        starTab2Bd = "|/|" + starAnswearTab2;
+      //      } else if (starAnswearTab2 !== "" && starAnswearTab2 !== undefined) {
+      //        starTab2Bd = "|/|" + starAnswearTab2;
+      //      } else {
+      //        starTab2Bd = "";
+      //      }
 
       // ---------------
 
       if (tab === "tab1") {
         var dataTab1 =
-          countProgressTab1;
+          countProgressTab1 +
+          china_knowBd +
+          team_endBd +
+          local_conBd +
+          china_thinkBd +
+          cheap_varBd +
+          domenBd +
+          socBd +
+          min_testBd +
+          successBd +
+          first_pay_calcBd +
+          retention_calcBd +
+          mashtabBd +
+          fail_doBd +
+          starTab1Bd;
       } else if (tab === "tab2") {
-        var dataTab2 =
-          countProgressTab2;
+        var dataTab2 = countProgressTab2;
       }
       formSubmit(dataTab1, dataTab2);
     }
@@ -1163,13 +1459,13 @@ theoryButtons.forEach((theoryButton) => {
         };
       }
       console.log(data2);
-    //    fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
-    //      method: "POST",
-    //      headers: {
-    //        "Content-Type": "application/json",
-    //      },
-    //      body: JSON.stringify(data2),
-    //    });
+      //    fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
+      //      method: "POST",
+      //      headers: {
+      //        "Content-Type": "application/json",
+      //      },
+      //      body: JSON.stringify(data2),
+      //    });
       // .then((response) => response.json())
       // .then((data) => {
       //   console.log(data);
