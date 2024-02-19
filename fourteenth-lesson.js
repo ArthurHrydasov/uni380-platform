@@ -206,7 +206,7 @@ function cheap_varCheck() {
     !cheap_varFourth.checked &&
     (cheap_varFirst.checked || cheap_varSecond.checked)
   ) {
-    hideElements(yesElement);
+    hideElements([yesElement]);
     showElement(noElement);
   } else {
     hideElements(noElement);
