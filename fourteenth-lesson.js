@@ -35,19 +35,18 @@ var fail_doAnswear = tab1BDVal[15];
 var starAnswearTab1 = tab1BDVal[16];
 
 var countProgressTab2 = tab2BDVal[0];
-// var pestleAnswear = tab2BDVal[1];
-// var decisionAnswear = tab2BDVal[2];
-// var decision_twoAnswear = tab2BDVal[3];
-// var factors_priorities_twoAnswear = tab2BDVal[4];
-// var legal_factorsAnswear = tab2BDVal[5];
-// var teamAnswear = tab2BDVal[6];
-// var team_txtAnswear = tab2BDVal[7];
-// var structureAnswear = tab2BDVal[8];
-// var signalAnswear = tab2BDVal[9];
-// var china_txtAnswear = tab2BDVal[10];
-// var believeAnswear = tab2BDVal[11];
-// var china_risks_txtAnswear = tab2BDVal[12];
-// var starAnswearTab2 = tab2BDVal[13];
+var force_majeureAnswear = tab2BDVal[1];
+var visaAnswear = tab2BDVal[2];
+var visa_txtAnswear = tab2BDVal[3];
+var office_txtAnswear = tab2BDVal[4];
+var siaAnswear = tab2BDVal[5];
+var factors_prioritiesAnswear = tab2BDVal[6];
+var investigation_txtAnswear = tab2BDVal[7];
+var contractAnswear = tab2BDVal[8];
+var sia_sayAnswear = tab2BDVal[9];
+var sia_doAnswear = tab2BDVal[10];
+var pay_halfAnswear = tab2BDVal[11];
+var starAnswearTab2 = tab2BDVal[12];
 
 function availableLinks(link) {
   document.getElementById(link).classList.add("available");
@@ -72,34 +71,6 @@ function activetab(link, tabsValue) {
   document.getElementById(link).classList.add("active");
 }
 
-// function create_lesson(collection_id, user_email, user_id) {
-//   var data = {
-//     collection_id: collection_id,
-//     user_email: user_email,
-//     user_id: user_id,
-//   };
-//   // console.log(data);
-//   fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/create-lesson", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   })
-//     .then((response) => response.json())
-//     .then((foundUser) => {
-//       console.log(foundUser);
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     });
-// }
-// create_lesson(
-//   "6589fffff1b468de2af19b66",
-//   user_email,
-//   fragments[4].slice(0, 24)
-// );
-
 if (countProgressTab1 > 47) {
   availableLinks("fourteenthl_tab2");
   activetab("fourteenthl_tab2", "tab2");
@@ -108,13 +79,15 @@ if (countProgressTab1 > 47) {
 function radioCheck(blopElement) {
   var radio = blopElement.querySelector('input[type="radio"]:checked');
   if (blopElement.id === "sia_say") {
-   if (radio) {
+    if (radio) {
       var value = radio.value;
-      var elementsToRemove = document.querySelectorAll('[sia_say]:not([sia_say="' + value + '"])');
+      var elementsToRemove = document.querySelectorAll(
+        '[sia_say]:not([sia_say="' + value + '"])'
+      );
       elementsToRemove.forEach((elem) => {
         elem.remove();
       });
-    }  
+    }
   } else {
     if (radio) {
       var value = radio.value;
@@ -125,8 +98,6 @@ function radioCheck(blopElement) {
     }
   }
 }
-
-// min_test
 
 function min_testCheck() {
   var min_testInfo = document.getElementById("min_test");
@@ -220,7 +191,6 @@ function cheap_varCheck() {
 }
 
 function contractCheck() {
-  console.log('contractCheck');
   var contractInfo = document.getElementById("contract");
   var contractForm = contractInfo.querySelector("form");
   var contractElements = contractForm.querySelectorAll(".check_input");
@@ -255,6 +225,44 @@ function contractCheck() {
     contractFourth.checked &&
     contractSecond.checked &&
     !contractFirst.checked
+  ) {
+    hideElements([noElement, maybeElement]);
+    showElement(yesElement);
+  } else {
+    hideElements([noElement, yesElement]);
+    showElement(maybeElement);
+  }
+}
+
+function sia_doCheck() {
+  var sia_doInfo = document.getElementById("sia_do");
+  var sia_doForm = sia_doInfo.querySelector("form");
+  var sia_doElements = sia_doForm.querySelectorAll(".check_input");
+
+  var sia_doFirst = sia_doElements[0].querySelector('input[type="checkbox"]');
+  var sia_doSecond = sia_doElements[1].querySelector('input[type="checkbox"]');
+  var sia_doThird = sia_doElements[2].querySelector('input[type="checkbox"]');
+  var sia_doFourth = sia_doElements[3].querySelector('input[type="checkbox"]');
+  var sia_doFiveth = sia_doElements[4].querySelector('input[type="checkbox"]');
+
+  var noElement = sia_doInfo.nextElementSibling.querySelector(".no");
+  var maybeElement = sia_doInfo.nextElementSibling.querySelector(".maybe");
+  var yesElement = sia_doInfo.nextElementSibling.querySelector(".yes");
+
+  if (
+    !sia_doFirst.checked &&
+    !sia_doThird.checked &&
+    !sia_doFourth.checked &&
+    (sia_doFiveth.checked || sia_doSecond.checked)
+  ) {
+    hideElements([yesElement, maybeElement]);
+    showElement(noElement);
+  } else if (
+    sia_doFirst.checked &&
+    sia_doThird.checked &&
+    sia_doFourth.checked &&
+    !sia_doFiveth.checked &&
+    !sia_doSecond.checked
   ) {
     hideElements([noElement, maybeElement]);
     showElement(yesElement);
@@ -627,6 +635,8 @@ function tab2Progress(numberBlop) {
     });
     if (block && block.id === "contract") {
       contractCheck();
+    } else if (block && block.id === "sia_do") {
+      sia_doCheck();
     }
   }
 
@@ -729,6 +739,14 @@ function tab2Progress(numberBlop) {
     const sia_sayTask = document.getElementById("sia_say");
     radioGetInfo(sia_sayTask, sia_sayAnswear);
   }
+  if (sia_doAnswear !== "" && sia_doAnswear !== undefined) {
+    const sia_doTask = document.getElementById("sia_do");
+    checkboxGetInfo(sia_doTask, sia_doAnswear);
+  }
+  if (pay_halfAnswear !== "" && pay_halfAnswear !== undefined) {
+    const pay_halfTask = document.getElementById("pay_half");
+    radioGetInfo(pay_halfTask, pay_halfAnswear);
+  }
 
   // force_majeureAnswear
   // visaAnswear
@@ -739,67 +757,8 @@ function tab2Progress(numberBlop) {
   // investigation_txtAnswear
   // contractAnswear
   // sia_sayAnswear
-
-  //   if (pestleAnswear !== "" && pestleAnswear !== undefined) {
-  //     const pestleTask = document.getElementById("pestle");
-  //     radioGetInfo(pestleTask, pestleAnswear);
-  //   }
-  //   if (decisionAnswear !== "" && decisionAnswear !== undefined) {
-  //     const decisionTask = document.getElementById("decision");
-  //     radioGetInfo(decisionTask, decisionAnswear);
-  //   }
-  //   if (decision_twoAnswear !== "" && decision_twoAnswear !== undefined) {
-  //     const decision_twoTask = document.getElementById("decision_two");
-  //     radioGetInfo(decision_twoTask, decision_twoAnswear);
-  //   }
-  //   if (
-  //     factors_priorities_twoAnswear !== "" &&
-  //     factors_priorities_twoAnswear !== undefined
-  //   ) {
-  //     const factors_priorities_twoTask = document.getElementById(
-  //       "factors_priorities_two"
-  //     );
-  //     dragGetInfo(factors_priorities_twoTask, factors_priorities_twoAnswear);
-  //   }
-  //   if (legal_factorsAnswear !== "" && legal_factorsAnswear !== undefined) {
-  //     const legal_factorsTask = document.getElementById("legal_factors");
-  //     radioGetInfo(legal_factorsTask, legal_factorsAnswear);
-  //   }
-  //   if (teamAnswear !== "" && teamAnswear !== undefined) {
-  //     const teamTask = document.getElementById("team");
-  //     radioGetInfo(teamTask, teamAnswear);
-  //   }
-  //   if (team_txtAnswear !== "" && team_txtAnswear !== undefined) {
-  //     const team_txtTask = document.getElementById("team_txt");
-  //     textareaGethInfo(team_txtTask, team_txtAnswear);
-  //   }
-  //   if (structureAnswear !== "" && structureAnswear !== undefined) {
-  //     const structureTask = document.getElementById("structure");
-  //     radioGetInfo(structureTask, structureAnswear);
-  //   }
-  //   if (signalAnswear !== "" && signalAnswear !== undefined) {
-  //     const signalTask = document.getElementById("signal");
-  //     radioGetInfo(signalTask, signalAnswear);
-  //   }
-  //   if (china_txtAnswear !== "" && china_txtAnswear !== undefined) {
-  //     const china_txtTask = document.getElementById("china_txt");
-  //     textareaGethInfo(china_txtTask, china_txtAnswear);
-  //   }
-  //   if (believeAnswear !== "" && believeAnswear !== undefined) {
-  //     const believeTask = document.getElementById("believe");
-  //     radioGetInfo(believeTask, believeAnswear);
-  //   }
-  //   if (china_risks_txtAnswear !== "" && china_risks_txtAnswear !== undefined) {
-  //     const china_risks_txtTask = document.getElementById("china_risks_txt");
-  //     textareaGethInfo(china_risks_txtTask, china_risks_txtAnswear);
-  //   }
-
-  //   if (starAnswearTab2 !== "" && starAnswearTab2 !== undefined) {
-  //     starGetInfo(
-  //       document.querySelector('div[tabs="tab2"] .star_blop'),
-  //       starAnswearTab2
-  //     );
-  //   }
+  // sia_doAnswear
+  // pay_halfAnswear
 
   window.scrollTo({
     top: document.documentElement.scrollHeight,
@@ -824,6 +783,7 @@ primalButtons.forEach(function (button) {
       cheap_varCheck();
       min_testCheck();
       contractCheck();
+      sia_doCheck();
 
       blopElement.nextElementSibling.classList.add("next_visible");
       setTimeout(function () {
@@ -1129,135 +1089,54 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
       var fail_doResult = radioPushInfo(fail_doTask);
     }
 
-    // china_knowResult
-    // team_endResult
-    // local_conResult
-    // china_thinkResult
-    // cheap_varResult
-    // domenResult
-    // socResult
-    // min_testResult
-    // blogersResult
-    // successResult
-    // reg_calcResult
-    // first_pay_calcResult
-    // retention_calcResult
-    // mashtabResult
-    // fail_doResult
+    // ------------------------------------------------------------
 
-    // if (buttonWithAttr.closest("#language")) {
-    //   const languageTask = document.getElementById("language");
-    //   var languageResult = radioPushInfo(languageTask);
-    // }
-    // if (buttonWithAttr.closest("#answer_cpl")) {
-    //   const answer_cplTask = document.getElementById("answer_cpl");
-    //   var answer_cplResult = radioPushInfo(answer_cplTask);
-    // }
-    // if (buttonWithAttr.closest("#criterion")) {
-    //   const criterionTask = document.getElementById("criterion");
-    //   var criterionResult = radioPushInfo(criterionTask);
-    // }
-    // if (buttonWithAttr.closest("#criterion_choose")) {
-    //   const criterion_chooseTask = document.getElementById("criterion_choose");
-    //   var criterion_chooseResult = checkboxPushInfo(criterion_chooseTask);
-    // }
-    // if (buttonWithAttr.closest("#main_criterion")) {
-    //   const main_criterionTask = document.getElementById("main_criterion");
-    //   var main_criterionResult = radioPushInfo(main_criterionTask);
-    // }
-    // if (buttonWithAttr.closest("#factor")) {
-    //   const factorTask = document.getElementById("factor");
-    //   var factorResult = radioPushInfo(factorTask);
-    // }
-    // if (buttonWithAttr.closest("#proposal")) {
-    //   const proposalTask = document.getElementById("proposal");
-    //   var proposalResult = radioPushInfo(proposalTask);
-    // }
-
-    // if (buttonWithAttr.closest("#conclusions")) {
-    //   const conclusionsTask = document.getElementById("conclusions");
-    //   var conclusionsResult = radioPushInfo(conclusionsTask);
-    // }
-    // if (buttonWithAttr.closest("#country")) {
-    //   const countryTask = document.getElementById("country");
-    //   var countryResult = checkboxPushInfo(countryTask);
-    // }
-    // if (buttonWithAttr.closest("#country_choose")) {
-    //   const country_chooseTask = document.getElementById("country_choose");
-    //   var country_chooseResult = radioPushInfo(country_chooseTask);
-    // }
-    // if (buttonWithAttr.closest("#factors_priorities")) {
-    //   const factors_prioritiesTask =
-    //     document.getElementById("factors_priorities");
-    //   var factors_prioritiesResult = dragPushInfo(factors_prioritiesTask);
-    // }
-    // if (buttonWithAttr.closest("#points_txt")) {
-    //   const points_txtTask = document.getElementById("points_txt");
-    //   var points_txtResult = textareaPushInfo(points_txtTask);
-    // }
-    // if (buttonWithAttr.closest("#country_points")) {
-    //   const country_pointsTask = document.getElementById("country_points");
-    //   var country_pointsResult = radioPushInfo(country_pointsTask);
-    // }
-    // if (buttonWithAttr.closest("#research_txt")) {
-    //   const research_txtTask = document.getElementById("research_txt");
-    //   var research_txtResult = textareaPushInfo(research_txtTask);
-    // }
-
-    // ---------------
-
-    // if (buttonWithAttr.closest("#pestle")) {
-    //   const pestleTask = document.getElementById("pestle");
-    //   var pestleResult = radioPushInfo(pestleTask);
-    // }
-    // if (buttonWithAttr.closest("#decision")) {
-    //   const decisionTask = document.getElementById("decision");
-    //   var decisionResult = radioPushInfo(decisionTask);
-    // }
-    // if (buttonWithAttr.closest("#decision_two")) {
-    //   const decision_twoTask = document.getElementById("decision_two");
-    //   var decision_twoResult = radioPushInfo(decision_twoTask);
-    // }
-    // if (buttonWithAttr.closest("#factors_priorities_two")) {
-    //   const factors_priorities_twoTask = document.getElementById(
-    //     "factors_priorities_two"
-    //   );
-    //   var factors_priorities_twoResult = dragPushInfo(
-    //     factors_priorities_twoTask
-    //   );
-    // }
-    // if (buttonWithAttr.closest("#legal_factors")) {
-    //   const legal_factorsTask = document.getElementById("legal_factors");
-    //   var legal_factorsResult = radioPushInfo(legal_factorsTask);
-    // }
-    // if (buttonWithAttr.closest("#team")) {
-    //   const teamTask = document.getElementById("team");
-    //   var teamResult = radioPushInfo(teamTask);
-    // }
-    // if (buttonWithAttr.closest("#team_txt")) {
-    //   const team_txtTask = document.getElementById("team_txt");
-    //   var team_txtResult = textareaPushInfo(team_txtTask);
-    // }
-    // if (buttonWithAttr.closest("#structure")) {
-    //   const structureTask = document.getElementById("structure");
-    //   var structureResult = radioPushInfo(structureTask);
-    // }
-    // if (buttonWithAttr.closest("#signal")) {
-    //   const signalTask = document.getElementById("signal");
-    //   var signalResult = radioPushInfo(signalTask);
-    // }
-    // if (buttonWithAttr.closest("#china_txt")) {
-    //   const china_txtTask = document.getElementById("china_txt");
-    //   var china_txtResult = textareaPushInfo(china_txtTask);
-    // }
-    // if (buttonWithAttr.closest("#believe")) {
-    //   const believeTask = document.getElementById("believe");
-    //   var believeResult = radioPushInfo(believeTask);
-    // }
-    // if (buttonWithAttr.closest("#china_risks_txt")) {
-    //   const china_risks_txtTask = document.getElementById("china_risks_txt");
-    //   var china_risks_txtResult = textareaPushInfo(china_risks_txtTask);
-    // }
+    if (buttonWithAttr.closest("#force_majeure")) {
+      const force_majeureTask = document.getElementById("force_majeure");
+      var force_majeureResult = radioPushInfo(force_majeureTask);
+    }
+    if (buttonWithAttr.closest("#visa")) {
+      const visaTask = document.getElementById("visa");
+      var visaResult = radioPushInfo(visaTask);
+    }
+    if (buttonWithAttr.closest("#visa_txt")) {
+      const visa_txtTask = document.getElementById("visa_txt");
+      var visa_txtResult = textareaPushInfo(visa_txtTask);
+    }
+    if (buttonWithAttr.closest("#office_txt")) {
+      const office_txtTask = document.getElementById("office_txt");
+      var office_txtResult = textareaPushInfo(office_txtTask);
+    }
+    if (buttonWithAttr.closest("#sia")) {
+      const siaTask = document.getElementById("sia");
+      var siaResult = radioPushInfo(siaTask);
+    }
+    if (buttonWithAttr.closest("#factors_priorities")) {
+      const factors_prioritiesTask =
+        document.getElementById("factors_priorities");
+      var factors_prioritiesResult = dragPushInfo(factors_prioritiesTask);
+    }
+    if (buttonWithAttr.closest("#investigation_txt")) {
+      const investigation_txtTask =
+        document.getElementById("investigation_txt");
+      var investigation_txtResult = textareaPushInfo(investigation_txtTask);
+    }
+    if (buttonWithAttr.closest("#contract")) {
+      const contractTask = document.getElementById("contract");
+      var contractResult = checkboxPushInfo(contractTask);
+    }
+    if (buttonWithAttr.closest("#sia_say")) {
+      const sia_sayTask = document.getElementById("sia_say");
+      var sia_sayResult = radioPushInfo(sia_sayTask);
+    }
+    if (buttonWithAttr.closest("#sia_do")) {
+      const sia_doTask = document.getElementById("sia_do");
+      var sia_doResult = checkboxPushInfo(sia_doTask);
+    }
+    if (buttonWithAttr.closest("#pay_half")) {
+      const pay_halfTask = document.getElementById("pay_half");
+      var pay_halfResult = radioPushInfo(pay_halfTask);
+    }
 
     // ---------------
 
@@ -1455,20 +1334,6 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
         fail_doBd = "";
       }
 
-      // china_knowBd
-      // team_endBd
-      // local_conBd
-      // china_thinkBd
-      // cheap_varBd
-      // domenBd
-      // socBd
-      // min_testBd
-      // successBd
-      // first_pay_calcBd
-      // retention_calcBd
-      // mashtabBd
-      // fail_doBd
-
       var starTab1Bd;
       if (star1 !== "" && star1 !== undefined) {
         starAnswearTab1 = star1;
@@ -1479,17 +1344,132 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
         starTab1Bd = "";
       }
 
-      // // ----------
+      // ----------
 
-      //      var starTab2Bd;
-      //      if (star2 !== "" && star2 !== undefined) {
-      //        starAnswearTab2 = star2;
-      //        starTab2Bd = "|/|" + starAnswearTab2;
-      //      } else if (starAnswearTab2 !== "" && starAnswearTab2 !== undefined) {
-      //        starTab2Bd = "|/|" + starAnswearTab2;
-      //      } else {
-      //        starTab2Bd = "";
-      //      }
+      var force_majeureBd;
+      if (force_majeureResult !== "" && force_majeureResult !== undefined) {
+        force_majeureAnswear = force_majeureResult;
+        force_majeureBd = "|/|" + force_majeureAnswear;
+      } else if (
+        force_majeureAnswear !== "" &&
+        force_majeureAnswear !== undefined
+      ) {
+        force_majeureBd = "|/|" + force_majeureAnswear;
+      } else {
+        force_majeureBd = "";
+      }
+      var visaBd;
+      if (visaResult !== "" && visaResult !== undefined) {
+        visaAnswear = visaResult;
+        visaBd = "|/|" + visaAnswear;
+      } else if (visaAnswear !== "" && visaAnswear !== undefined) {
+        visaBd = "|/|" + visaAnswear;
+      } else {
+        visaBd = "";
+      }
+      var visa_txtBd;
+      if (visa_txtResult !== "" && visa_txtResult !== undefined) {
+        visa_txtAnswear = visa_txtResult;
+        visa_txtBd = "|/|" + visa_txtAnswear;
+      } else if (visa_txtAnswear !== "" && visa_txtAnswear !== undefined) {
+        visa_txtBd = "|/|" + visa_txtAnswear;
+      } else {
+        visa_txtBd = "";
+      }
+      var office_txtBd;
+      if (office_txtResult !== "" && office_txtResult !== undefined) {
+        office_txtAnswear = office_txtResult;
+        office_txtBd = "|/|" + office_txtAnswear;
+      } else if (office_txtAnswear !== "" && office_txtAnswear !== undefined) {
+        office_txtBd = "|/|" + office_txtAnswear;
+      } else {
+        office_txtBd = "";
+      }
+      var siaBd;
+      if (siaResult !== "" && siaResult !== undefined) {
+        siaAnswear = siaResult;
+        siaBd = "|/|" + siaAnswear;
+      } else if (siaAnswear !== "" && siaAnswear !== undefined) {
+        siaBd = "|/|" + siaAnswear;
+      } else {
+        siaBd = "";
+      }
+      var factors_prioritiesBd;
+      if (
+        factors_prioritiesResult !== "" &&
+        factors_prioritiesResult !== undefined
+      ) {
+        factors_prioritiesAnswear = factors_prioritiesResult;
+        factors_prioritiesBd = "|/|" + factors_prioritiesAnswear;
+      } else if (
+        factors_prioritiesAnswear !== "" &&
+        factors_prioritiesAnswear !== undefined
+      ) {
+        factors_prioritiesBd = "|/|" + factors_prioritiesAnswear;
+      } else {
+        factors_prioritiesBd = "";
+      }
+      var investigation_txtBd;
+      if (
+        investigation_txtResult !== "" &&
+        investigation_txtResult !== undefined
+      ) {
+        investigation_txtAnswear = investigation_txtResult;
+        investigation_txtBd = "|/|" + investigation_txtAnswear;
+      } else if (
+        investigation_txtAnswear !== "" &&
+        investigation_txtAnswear !== undefined
+      ) {
+        investigation_txtBd = "|/|" + investigation_txtAnswear;
+      } else {
+        investigation_txtBd = "";
+      }
+      var contractBd;
+      if (contractResult !== "" && contractResult !== undefined) {
+        contractAnswear = contractResult;
+        contractBd = "|/|" + contractAnswear;
+      } else if (contractAnswear !== "" && contractAnswear !== undefined) {
+        contractBd = "|/|" + contractAnswear;
+      } else {
+        contractBd = "";
+      }
+      var sia_sayBd;
+      if (sia_sayResult !== "" && sia_sayResult !== undefined) {
+        sia_sayAnswear = sia_sayResult;
+        sia_sayBd = "|/|" + sia_sayAnswear;
+      } else if (sia_sayAnswear !== "" && sia_sayAnswear !== undefined) {
+        sia_sayBd = "|/|" + sia_sayAnswear;
+      } else {
+        sia_sayBd = "";
+      }
+      var sia_doBd;
+      if (sia_doResult !== "" && sia_doResult !== undefined) {
+        sia_doAnswear = sia_doResult;
+        sia_doBd = "|/|" + sia_doAnswear;
+      } else if (sia_doAnswear !== "" && sia_doAnswear !== undefined) {
+        sia_doBd = "|/|" + sia_doAnswear;
+      } else {
+        sia_doBd = "";
+      }
+      var pay_halfBd;
+      if (pay_halfResult !== "" && pay_halfResult !== undefined) {
+        pay_halfAnswear = pay_halfResult;
+        pay_halfBd = "|/|" + pay_halfAnswear;
+      } else if (pay_halfAnswear !== "" && pay_halfAnswear !== undefined) {
+        pay_halfBd = "|/|" + pay_halfAnswear;
+      } else {
+        pay_halfBd = "";
+      }
+
+      var starTab2Bd;
+      if (star2 !== "" && star2 !== undefined) {
+        starAnswearTab2 = star2;
+        starTab2Bd = "|/|" + starAnswearTab2;
+      } else if (starAnswearTab2 !== "" && starAnswearTab2 !== undefined) {
+        starTab2Bd = "|/|" + starAnswearTab2;
+      } else {
+        starTab2Bd = "";
+      }
 
       // ---------------
 
@@ -1513,7 +1493,20 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
           fail_doBd +
           starTab1Bd;
       } else if (tab === "tab2") {
-        var dataTab2 = countProgressTab2;
+        var dataTab2 =
+          countProgressTab2 +
+          force_majeureBd +
+          visaBd +
+          visa_txtBd +
+          office_txtBd +
+          siaBd +
+          factors_prioritiesBd +
+          investigation_txtBd +
+          contractBd +
+          sia_sayBd +
+          sia_doBd +
+          pay_halfBd +
+          starTab2Bd;
       }
       formSubmit(dataTab1, dataTab2);
     }
