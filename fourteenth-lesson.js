@@ -209,7 +209,7 @@ function cheap_varCheck() {
     hideElements([yesElement]);
     showElement(noElement);
   } else {
-    hideElements(noElement);
+    hideElements([noElement]);
     showElement(yesElement);
   }
 }
