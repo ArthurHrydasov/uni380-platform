@@ -72,6 +72,34 @@ function activetab(link, tabsValue) {
   document.getElementById(link).classList.add("active");
 }
 
+// function create_lesson(collection_id, user_email, user_id) {
+//   var data = {
+//     collection_id: collection_id,
+//     user_email: user_email,
+//     user_id: user_id,
+//   };
+//   // console.log(data);
+//   fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/create-lesson", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(data),
+//   })
+//     .then((response) => response.json())
+//     .then((foundUser) => {
+//       console.log(foundUser);
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// }
+// create_lesson(
+//   "6589fffff1b468de2af19b66",
+//   user_email,
+//   fragments[4].slice(0, 24)
+// );
+
 if (countProgressTab1 > 47) {
   availableLinks("fourteenthl_tab2");
   activetab("fourteenthl_tab2", "tab2");
@@ -79,17 +107,15 @@ if (countProgressTab1 > 47) {
 
 function radioCheck(blopElement) {
   var radio = blopElement.querySelector('input[type="radio"]:checked');
-  if (blopElement.id === "details") {
+  if (blopElement.id === "sia_say") {
     if (radio) {
       var value = radio.value;
-      if (value === "one") {
-        document.querySelector('[details="no"]').remove();
-      } else {
-        var removeYes = document.querySelectorAll('[details="yes"]');
-        removeYes.forEach((yes) => {
-          yes.remove();
-        });
-      }
+      var elementsToRemove = document.querySelectorAll(
+        '[sia_say="' + value + '"]'
+      );
+      elementsToRemove.forEach((elem) => {
+        elem.remove();
+      });
     }
   } else {
     if (radio) {
@@ -186,6 +212,51 @@ function cheap_varCheck() {
     cheap_varFourth.checked &&
     !cheap_varFirst.checked &&
     !cheap_varSecond.checked
+  ) {
+    hideElements([noElement, maybeElement]);
+    showElement(yesElement);
+  } else {
+    hideElements([noElement, yesElement]);
+    showElement(maybeElement);
+  }
+}
+
+function contractCheck() {
+  console.log('contractCheck');
+  var contractInfo = document.getElementById("contract");
+  var contractForm = contractInfo.querySelector("form");
+  var contractElements = contractForm.querySelectorAll(".check_input");
+
+  var contractFirst = contractElements[0].querySelector(
+    'input[type="checkbox"]'
+  );
+  var contractSecond = contractElements[1].querySelector(
+    'input[type="checkbox"]'
+  );
+  var contractThird = contractElements[2].querySelector(
+    'input[type="checkbox"]'
+  );
+  var contractFourth = contractElements[3].querySelector(
+    'input[type="checkbox"]'
+  );
+
+  var noElement = contractInfo.nextElementSibling.querySelector(".no");
+  var maybeElement = contractInfo.nextElementSibling.querySelector(".maybe");
+  var yesElement = contractInfo.nextElementSibling.querySelector(".yes");
+
+  if (
+    !contractSecond.checked &&
+    !contractThird.checked &&
+    !contractFourth.checked &&
+    contractFirst.checked
+  ) {
+    hideElements([yesElement, maybeElement]);
+    showElement(noElement);
+  } else if (
+    contractThird.checked &&
+    contractFourth.checked &&
+    contractSecond.checked &&
+    !contractFirst.checked
   ) {
     hideElements([noElement, maybeElement]);
     showElement(yesElement);
@@ -510,32 +581,6 @@ function tab1Progress(numberBlop) {
     );
   }
 
-  // china_knowAnswear
-  // team_endAnswear
-  // local_conAnswear
-  // china_thinkAnswear
-  // cheap_varAnswear
-  // domenAnswear
-  // socAnswear
-  // min_testAnswear
-  // blogersAnswear
-  // successAnswear
-  // reg_calcAnswear
-  // first_pay_calcAnswear
-  // retention_calcAnswear
-  // mashtabAnswear
-  // fail_doAnswear
-  // starAnswearTab1
-
-  //   if (
-  //     factors_prioritiesAnswear !== "" &&
-  //     factors_prioritiesAnswear !== undefined
-  //   ) {
-  //     const factors_prioritiesTask =
-  //       document.getElementById("factors_priorities");
-  //     dragGetInfo(factors_prioritiesTask, factors_prioritiesAnswear);
-  //   }
-
   window.scrollTo({
     top: document.documentElement.scrollHeight,
     behavior: "smooth",
@@ -582,9 +627,9 @@ function tab2Progress(numberBlop) {
         }
       }
     });
-    // if (block && block.id === "criterion_choose") {
-    //   criterion_chooseCheck();
-    // }
+    if (block && block.id === "contract") {
+      contractCheck();
+    }
   }
 
   function starGetInfo(starBlock, bd_star_ratingVal) {
@@ -617,6 +662,8 @@ function tab2Progress(numberBlop) {
       divElement.classList.add("w--redirected-checked");
     }
     radioCheck(block);
+
+    // sia_say
   }
 
   function textareaGethInfo(block, value) {
@@ -640,6 +687,60 @@ function tab2Progress(numberBlop) {
       item.querySelector(".drag_number").textContent = index + 1;
     });
   }
+
+  if (force_majeureAnswear !== "" && force_majeureAnswear !== undefined) {
+    const force_majeureTask = document.getElementById("force_majeure");
+    radioGetInfo(force_majeureTask, force_majeureAnswear);
+  }
+  if (visaAnswear !== "" && visaAnswear !== undefined) {
+    const visaTask = document.getElementById("visa");
+    radioGetInfo(visaTask, visaAnswear);
+  }
+  if (visa_txtAnswear !== "" && visa_txtAnswear !== undefined) {
+    const visa_txtTask = document.getElementById("visa_txt");
+    textareaGethInfo(visa_txtTask, visa_txtAnswear);
+  }
+  if (office_txtAnswear !== "" && office_txtAnswear !== undefined) {
+    const office_txtTask = document.getElementById("office_txt");
+    textareaGethInfo(office_txtTask, office_txtAnswear);
+  }
+  if (siaAnswear !== "" && siaAnswear !== undefined) {
+    const siaTask = document.getElementById("sia");
+    radioGetInfo(siaTask, siaAnswear);
+  }
+  if (
+    factors_prioritiesAnswear !== "" &&
+    factors_prioritiesAnswear !== undefined
+  ) {
+    const factors_prioritiesTask =
+      document.getElementById("factors_priorities");
+    dragGetInfo(factors_prioritiesTask, factors_prioritiesAnswear);
+  }
+  if (
+    investigation_txtAnswear !== "" &&
+    investigation_txtAnswear !== undefined
+  ) {
+    const investigation_txtTask = document.getElementById("investigation_txt");
+    textareaGethInfo(investigation_txtTask, investigation_txtAnswear);
+  }
+  if (contractAnswear !== "" && contractAnswear !== undefined) {
+    const contractTask = document.getElementById("contract");
+    checkboxGetInfo(contractTask, contractAnswear);
+  }
+  if (sia_sayAnswear !== "" && sia_sayAnswear !== undefined) {
+    const sia_sayTask = document.getElementById("sia_say");
+    radioGetInfo(sia_sayTask, sia_sayAnswear);
+  }
+
+  // force_majeureAnswear
+  // visaAnswear
+  // visa_txtAnswear
+  // office_txtAnswear
+  // siaAnswear
+  // factors_prioritiesAnswear
+  // investigation_txtAnswear
+  // contractAnswear
+  // sia_sayAnswear
 
   //   if (pestleAnswear !== "" && pestleAnswear !== undefined) {
   //     const pestleTask = document.getElementById("pestle");
@@ -724,6 +825,7 @@ primalButtons.forEach(function (button) {
       radioCheck(blopElement);
       cheap_varCheck();
       min_testCheck();
+      contractCheck();
 
       blopElement.nextElementSibling.classList.add("next_visible");
       setTimeout(function () {
