@@ -199,6 +199,7 @@ function cheap_varCheck() {
   );
 
   var noElement = cheap_varInfo.nextElementSibling.querySelector(".no");
+  var maybeElement = cheap_varInfo.nextElementSibling.querySelector(".maybe");
   var yesElement = cheap_varInfo.nextElementSibling.querySelector(".yes");
 
   if (
@@ -206,11 +207,19 @@ function cheap_varCheck() {
     !cheap_varFourth.checked &&
     (cheap_varFirst.checked || cheap_varSecond.checked)
   ) {
-    hideElements([yesElement]);
+    hideElements([yesElement, maybeElement]);
     showElement(noElement);
-  } else {
-    hideElements([noElement]);
+  } else if (
+    cheap_varThird.checked &&
+    cheap_varFourth.checked &&
+    !cheap_varFirst.checked &&
+    !cheap_varSecond.checked
+  ) {
+    hideElements([noElement, maybeElement]);
     showElement(yesElement);
+  } else {
+    hideElements([noElement, yesElement]);
+    showElement(maybeElement);
   }
 }
 
