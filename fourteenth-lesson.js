@@ -72,38 +72,10 @@ function activetab(link, tabsValue) {
   document.getElementById(link).classList.add("active");
 }
 
-// function create_lesson(collection_id, user_email, user_id) {
-//   var data = {
-//     collection_id: collection_id,
-//     user_email: user_email,
-//     user_id: user_id,
-//   };
-//   // console.log(data);
-//   fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/create-lesson", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   })
-//     .then((response) => response.json())
-//     .then((foundUser) => {
-//       console.log(foundUser);
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     });
-// }
-// create_lesson(
-//   "6589fffff1b468de2af19b66",
-//   user_email,
-//   fragments[4].slice(0, 24)
-// );
-
-// if (countProgressTab1 > 42) {
-//   availableLinks("thirteenthl_tab2");
-//   activetab("thirteenthl_tab2", "tab2");
-// }
+if (countProgressTab1 > 47) {
+  availableLinks("fourteenthl_tab2");
+  activetab("fourteenthl_tab2", "tab2");
+}
 
 function radioCheck(blopElement) {
   var radio = blopElement.querySelector('input[type="radio"]:checked');
