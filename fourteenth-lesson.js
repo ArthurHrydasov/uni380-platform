@@ -199,7 +199,6 @@ function cheap_varCheck() {
   );
 
   var noElement = cheap_varInfo.nextElementSibling.querySelector(".no");
-  var maybeElement = cheap_varInfo.nextElementSibling.querySelector(".maybe");
   var yesElement = cheap_varInfo.nextElementSibling.querySelector(".yes");
 
   if (
@@ -207,19 +206,11 @@ function cheap_varCheck() {
     !cheap_varFourth.checked &&
     (cheap_varFirst.checked || cheap_varSecond.checked)
   ) {
-    hideElements([yesElement, maybeElement]);
+    hideElements([yesElement]);
     showElement(noElement);
-  } else if (
-    cheap_varThird.checked &&
-    cheap_varFourth.checked &&
-    !cheap_varFirst.checked &&
-    !cheap_varSecond.checked
-  ) {
-    hideElements([noElement, maybeElement]);
-    showElement(yesElement);
   } else {
-    hideElements([noElement, yesElement]);
-    showElement(maybeElement);
+    hideElements([noElement]);
+    showElement(yesElement);
   }
 }
 
@@ -1065,7 +1056,9 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
     // domenResult
     // socResult
     // min_testResult
+    // blogersResult
     // successResult
+    // reg_calcResult
     // first_pay_calcResult
     // retention_calcResult
     // mashtabResult
@@ -1311,6 +1304,24 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
       } else {
         min_testBd = "";
       }
+      var blogersBd;
+      if (blogersResult !== "" && blogersResult !== undefined) {
+        blogersAnswear = blogersResult;
+        blogersBd = "|/|" + blogersAnswear;
+      } else if (blogersAnswear !== "" && blogersAnswear !== undefined) {
+        blogersBd = "|/|" + blogersAnswear;
+      } else {
+        blogersBd = "";
+      }
+      var reg_calcBd;
+      if (reg_calcResult !== "" && reg_calcResult !== undefined) {
+        reg_calcAnswear = reg_calcResult;
+        reg_calcBd = "|/|" + reg_calcAnswear;
+      } else if (reg_calcAnswear !== "" && reg_calcAnswear !== undefined) {
+        reg_calcBd = "|/|" + reg_calcAnswear;
+      } else {
+        reg_calcBd = "";
+      }
       var successBd;
       if (successResult !== "" && successResult !== undefined) {
         successAnswear = successResult;
@@ -1412,7 +1423,9 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
           domenBd +
           socBd +
           min_testBd +
+          blogersBd +
           successBd +
+          reg_calcBd +
           first_pay_calcBd +
           retention_calcBd +
           mashtabBd +
