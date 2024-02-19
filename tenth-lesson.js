@@ -222,6 +222,7 @@ function cheap_varCheck() {
 }
 
 function contractCheck() {
+  console.log('contractCheck');
   var contractInfo = document.getElementById("contract");
   var contractForm = contractInfo.querySelector("form");
   var contractElements = contractForm.querySelectorAll(".check_input");
