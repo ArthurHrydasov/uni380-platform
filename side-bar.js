@@ -262,6 +262,11 @@ function sideBarAvailable(customPass) {
 
         if (data.data.sex === "female") {
           var swapSexSpans = document.querySelectorAll(".swap_sex");
+          var elementsWithAttribute = document.querySelectorAll('[sex14img]');
+          if (elementsWithAttribute.length > 0) {
+            elementsWithAttribute[0].classList.add('sex14img_none');
+            elementsWithAttribute[1].classList.remove('sex14img_none');
+          }
           swapSexSpans.forEach((span) => {
             var text = span.textContent;
             if (text === "народився") {
