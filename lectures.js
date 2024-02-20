@@ -434,6 +434,28 @@ if (url.includes("progress")) {
             answearTask2_8 +
             answearTask2_10;
 
+        console.log(
+            answearTask1_1,
+            answearTask1_2,
+            answearTask1_3,
+            answearTask1_5,
+            answearTask1_6,
+            answearTask1_7,
+            answearTask1_8,
+            answearTask1_10,
+            answearTask1_11,
+            answearTask1_12,
+            answearTask1_13,
+            answearTask1_14,
+            answearTask1_15,
+            answearTask2_1,
+            answearTask2_2,
+            answearTask2_5,
+            answearTask1_6,
+            answearTask2_8,
+            answearTask2_10
+        );
+
         document.querySelector(
           '.middle_content[lesson="' + linkId + '"] .right_answears'
         ).innerHTML = tasksPoints;
