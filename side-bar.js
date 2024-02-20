@@ -218,6 +218,12 @@ function sideBarAvailable(customPass) {
             } else if (element.closest('.lesson_tab[tabs="tab2"]')) {
               customChapterCount = 30;
             }
+          } else if (currentUrl.indexOf("fourteenth-lesson") !== -1) {
+            if (element.closest('.lesson_tab[tabs="tab1"]')) {
+              customChapterCount = 31;
+            } else if (element.closest('.lesson_tab[tabs="tab2"]')) {
+              customChapterCount = 32;
+            }
           }
 
           getSideProgress(lessonspass, customChapterCount);
