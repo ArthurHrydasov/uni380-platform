@@ -441,12 +441,6 @@ function tab1Progress(numberBlop) {
     }
     radioCheck(block);
   }
-
-  //   function textareaGethInfo(block, value) {
-  //     var textarea = block.querySelector("textarea");
-  //     textarea.value = value;
-  //   }
-
   function textareaGethInfo(block, value) {
     var textarea = block.querySelector("textarea");
     textarea.value = value;
@@ -670,8 +664,6 @@ function tab2Progress(numberBlop) {
       divElement.classList.add("w--redirected-checked");
     }
     radioCheck(block);
-
-    // sia_say
   }
 
   function textareaGethInfo(block, value) {
@@ -747,19 +739,6 @@ function tab2Progress(numberBlop) {
     const pay_halfTask = document.getElementById("pay_half");
     radioGetInfo(pay_halfTask, pay_halfAnswear);
   }
-
-  // force_majeureAnswear
-  // visaAnswear
-  // visa_txtAnswear
-  // office_txtAnswear
-  // siaAnswear
-  // factors_prioritiesAnswear
-  // investigation_txtAnswear
-  // contractAnswear
-  // sia_sayAnswear
-  // sia_doAnswear
-  // pay_halfAnswear
-
   window.scrollTo({
     top: document.documentElement.scrollHeight,
     behavior: "smooth",
@@ -792,12 +771,6 @@ primalButtons.forEach(function (button) {
 
       if (button.classList.contains("last_button")) {
         var ss = button.getAttribute("numberBlop");
-        // create_lesson(
-        //   "6589fffff1b468de2af19b66",
-        //   user_email,
-        //   fragments[4].slice(0, 24)
-        // );
-
         var parent = button.closest(".lesson_tab").getAttribute("tabs");
 
         if (ss > 47 && parent === "tab1") {
@@ -1147,15 +1120,14 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
         user_tab1: dataTab1,
         user_tab2: dataTab2,
       };
-      console.log(data);
-
-      //    fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
-      //      method: "POST",
-      //      headers: {
-      //        "Content-Type": "application/json",
-      //      },
-      //      body: JSON.stringify(data),
-      //    });
+      //console.log(data);
+      fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
       // .then((response) => response.json())
       // .then((data) => {
       //   console.log(data);
@@ -1554,14 +1526,14 @@ theoryButtons.forEach((theoryButton) => {
           tab2theory: tab2theoryVal,
         };
       }
-      console.log(data2);
-      //    fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
-      //      method: "POST",
-      //      headers: {
-      //        "Content-Type": "application/json",
-      //      },
-      //      body: JSON.stringify(data2),
-      //    });
+      // console.log(data2);
+      fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data2),
+      });
       // .then((response) => response.json())
       // .then((data) => {
       //   console.log(data);
