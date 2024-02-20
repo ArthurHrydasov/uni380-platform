@@ -39,7 +39,7 @@ function sideBarAvailable(customPass) {
           user_email === "siaprokopa@gmail.com" ||
           user_email === "dimazelenskiy6@gmail.com"
         ) {
-          lessonspass = 13;
+          lessonspass = 14;
         }
         // console.log(lessonspass);
         getSideProgress(lessonspass);
@@ -4330,7 +4330,7 @@ if (url.includes("progress")) {
         twelfthLesson(linkId);
       } else if (linkId === "thirteenth-lesson") {
         thirteenthLesson(linkId);
-      }
+      } 
       // else if (linkId === "eleventh-lesson") {
       //   eleventhLesson(linkId);
       // }
@@ -4660,6 +4660,26 @@ if (url.includes("progress")) {
     button.addEventListener("click", function () {
       if (index < firstLessonURL13.length) {
         videoIframe13.src = firstLessonURL13[index];
+      }
+    });
+  });
+
+  var videoIframe14 = document.querySelector("#fourteenth_lesson_video iframe");
+  var firstLessonURL14 = [
+    "https://www.youtube.com/embed/VAG7mHMmMlo?rel=0&controls=1&autoplay=1&start=0",
+    "https://www.youtube.com/embed/VAG7mHMmMlo?rel=0&controls=1&autoplay=1&start=245",
+    "https://www.youtube.com/embed/VAG7mHMmMlo?rel=0&controls=1&autoplay=1&start=2329",
+    "https://www.youtube.com/embed/VAG7mHMmMlo?rel=0&controls=1&autoplay=1&start=3160",
+    "https://www.youtube.com/embed/VAG7mHMmMlo?rel=0&controls=1&autoplay=1&start=5330",
+    "https://www.youtube.com/embed/VAG7mHMmMlo?rel=0&controls=1&autoplay=1&start=6320",
+  ];
+
+  var buttons14 = document.querySelectorAll(".timestamp_but14");
+
+  buttons14.forEach(function (button, index) {
+    button.addEventListener("click", function () {
+      if (index < firstLessonURL14.length) {
+        videoIframe14.src = firstLessonURL14[index];
       }
     });
   });
