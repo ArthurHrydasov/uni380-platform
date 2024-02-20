@@ -656,27 +656,27 @@ function getSideProgress(lessonspass, customChapterCount) {
             var tab2BDParts14 = tab2BDVal14.split("|/|");
             var tab2Progress14 = tab2BDParts14[0];
             if (+tab2Progress14 < 44) {
-              LessonChapters = 30;
-            } else {
               LessonChapters = 31;
+            } else {
+              LessonChapters = 32;
             }
           } else if (tab1BDVal14 !== "" && tab1BDVal14 !== undefined) {
             var tab1BDParts14 = tab1BDVal14.split("|/|");
             var tab1Progress14 = tab1BDParts14[0];
             if (+tab1Progress14 < 48) {
-              LessonChapters = 29;
-            } else {
               LessonChapters = 30;
+            } else {
+              LessonChapters = 31;
             }
           } else {
-            LessonChapters = 29;
+            LessonChapters = 30;
           }
         }
       }
       
 
       var userProgress = +LessonChapters;
-      var lessonTarget = 31;
+      var lessonTarget = 32;
       var percentProgress = (100 / lessonTarget) * userProgress;
       percentProgress = Math.round(percentProgress);
 
