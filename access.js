@@ -67,6 +67,8 @@ if (currentUrl.includes("-lesson")) {
       lessoncontinue = "12-start";
     } else if (currentUrl.includes("thirteenth-lesson")) {
       lessoncontinue = "13-start";
+    } else if (currentUrl.includes("fourteenth-lesson")) {
+      lessoncontinue = "14-start";
     }
     var data = {
       user_email: user_email,
@@ -130,6 +132,9 @@ if (currentUrl.includes("-lesson")) {
       newPass = 13;
     } else if (currentUrl.includes("thirteenth-lesson")) {
       lessoncontinue = "13-end";
+      newPass = 14;
+    } else if (currentUrl.includes("fourteenth-lesson")) {
+      lessoncontinue = "14-end";
       newPass = 14;
     }
     var data = {
@@ -640,10 +645,38 @@ function getSideProgress(lessonspass, customChapterCount) {
             LessonChapters = 28;
           }
         }
+      } else if (+lessonspass === 14) {
+        var fourteenthInfo = await getLessonInfo("6589fffff1b468de2af19b66");
+        var tab1BDVal14 = fourteenthInfo.fieldData.tab1;
+        var tab2BDVal14 = fourteenthInfo.fieldData.tab2;
+        if (customChapterCount !== "" && customChapterCount !== undefined) {
+          LessonChapters = customChapterCount;
+        } else {
+          if (tab2BDVal14 !== "" && tab2BDVal14 !== undefined) {
+            var tab2BDParts14 = tab2BDVal14.split("|/|");
+            var tab2Progress14 = tab2BDParts14[0];
+            if (+tab2Progress14 < 44) {
+              LessonChapters = 30;
+            } else {
+              LessonChapters = 31;
+            }
+          } else if (tab1BDVal14 !== "" && tab1BDVal14 !== undefined) {
+            var tab1BDParts14 = tab1BDVal14.split("|/|");
+            var tab1Progress14 = tab1BDParts14[0];
+            if (+tab1Progress14 < 48) {
+              LessonChapters = 29;
+            } else {
+              LessonChapters = 30;
+            }
+          } else {
+            LessonChapters = 29;
+          }
+        }
       }
+      
 
       var userProgress = +LessonChapters;
-      var lessonTarget = 33;
+      var lessonTarget = 31;
       var percentProgress = (100 / lessonTarget) * userProgress;
       percentProgress = Math.round(percentProgress);
 
