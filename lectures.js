@@ -154,7 +154,7 @@ if (url.includes("progress")) {
           var task1_1 = ["one", "two", "three", "four", "five"];
           var answearTask1_1 = pointsCounter(china_knowAnswer, task1_1);
 
-          var team_endAnswer = tab2BDParts[2];
+          var team_endAnswer = tab1BDParts[2];
           var team_endPoint = team_endAnswer;
           team_endPoint = tuskDonePoint(team_endPoint);
           var task1_2;
@@ -183,7 +183,7 @@ if (url.includes("progress")) {
           var task1_5 = ["three", "four"];
           var answearTask1_5 = pointsCounter(cheap_varAnswer, task1_5);
 
-          var domenAnswer = tab2BDParts[6];
+          var domenAnswer = tab1BDParts[6];
           var domenPoint = domenAnswer;
           domenPoint = tuskDonePoint(domenPoint);
           var task1_6;
