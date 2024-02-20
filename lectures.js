@@ -100,6 +100,402 @@ if (url.includes("progress")) {
     }
   }
 
+  function fourteenthLesson(linkId) {
+    (async () => {
+      try {
+        var firstLessonInfo = await getLessonInfo("6589fffff1b468de2af19b66");
+
+        var tab1BDVal = firstLessonInfo.fieldData.tab1;
+        var tab2BDVal = firstLessonInfo.fieldData.tab2;
+
+        function tuskDonePoint(point) {
+          if (point === "" || point === undefined || point === "empty") {
+            point = 0;
+          } else {
+            point = 1;
+          }
+          return point;
+        }
+
+        function pointsCounter(data, valuesToCheck) {
+          if (data !== "" && data !== undefined) {
+            var counter = 0;
+            valuesToCheck.forEach(function (value) {
+              if (data.includes(value)) {
+                counter++;
+              }
+            });
+          } else {
+            counter = 0;
+          }
+          return counter;
+        }
+
+        function dragDonePoint(value) {
+          let userVariable = value;
+          let correctVariable = "one,two,three,four,five";
+          let userArray = userVariable.split(",");
+          let correctArray = correctVariable.split(",");
+          let score = 0;
+          for (let i = 0; i < userArray.length; i++) {
+            if (userArray[i] === correctArray[i]) {
+              score++;
+            }
+          }
+          return score;
+        }
+
+        if (tab1BDVal !== "" && tab1BDVal !== undefined) {
+          var tab1BDParts = tab1BDVal.split("|/|");
+
+          var china_knowAnswer = tab1BDParts[1];
+          var china_knowPoint = china_knowAnswer;
+          china_knowPoint = tuskDonePoint(china_knowPoint);
+          var task1_1 = ["one", "two", "three", "four", "five"];
+          var answearTask1_1 = pointsCounter(china_knowAnswer, task1_1);
+
+          var team_endAnswer = tab2BDParts[2];
+          var team_endPoint = team_endAnswer;
+          team_endPoint = tuskDonePoint(team_endPoint);
+          var task1_2;
+          if (team_endAnswer === "four") {
+            task1_2 = ["four"];
+          } else if (team_endAnswer === "two") {
+            task1_2 = ["two"];
+          } else {
+            task1_2 = ["four"];
+          }
+          var answearTask1_2 = pointsCounter(team_endAnswer, task1_2);
+
+          var local_conAnswer = tab1BDParts[3];
+          var local_conPoint = local_conAnswer;
+          local_conPoint = tuskDonePoint(local_conPoint);
+          var task1_3 = ["two"];
+          var answearTask1_3 = pointsCounter(local_conAnswer, task1_3);
+
+          var china_thinkAnswer = tab1BDParts[4];
+          var china_thinkPoint = china_thinkAnswer;
+          china_thinkPoint = tuskDonePoint(china_thinkPoint);
+
+          var cheap_varAnswer = tab1BDParts[5];
+          var cheap_varPoint = cheap_varAnswer;
+          cheap_varPoint = tuskDonePoint(cheap_varPoint);
+          var task1_5 = ["three", "four"];
+          var answearTask1_5 = pointsCounter(cheap_varAnswer, task1_5);
+
+          var domenAnswer = tab2BDParts[6];
+          var domenPoint = domenAnswer;
+          domenPoint = tuskDonePoint(domenPoint);
+          var task1_6;
+          if (domenAnswer === "two") {
+            task1_6 = ["two"];
+          } else if (domenAnswer === "three") {
+            task1_6 = ["three"];
+          } else {
+            task1_6 = ["two"];
+          }
+          var answearTask1_6 = pointsCounter(domenAnswer, task1_6);
+
+          var socAnswer = tab1BDParts[7];
+          var socPoint = socAnswer;
+          socPoint = tuskDonePoint(socPoint);
+          var task1_7 = ["one", "two", "three", "four", "five"];
+          var answearTask1_7 = pointsCounter(socAnswer, task1_7);
+
+          var min_testAnswer = tab1BDParts[8];
+          var min_testPoint = min_testAnswer;
+          min_testPoint = tuskDonePoint(min_testPoint);
+          var task1_8 = ["one", "two", "five"];
+          var answearTask1_8 = pointsCounter(min_testAnswer, task1_8);
+
+          var blogersAnswer = tab1BDParts[9];
+          var blogersPoint = blogersAnswer;
+          blogersPoint = tuskDonePoint(blogersPoint);
+
+          var successAnswer = tab1BDParts[10];
+          var successPoint = successAnswer;
+          successPoint = tuskDonePoint(successPoint);
+          var task1_10 = ["three"];
+          var answearTask1_10 = pointsCounter(successAnswer, task1_10);
+
+          var reg_calcAnswer = tab1BDParts[11];
+          var reg_calcPoint = reg_calcAnswer;
+          reg_calcPoint = tuskDonePoint(reg_calcPoint);
+          if (reg_calcAnswer !== "" || reg_calcAnswer !== undefined) {
+            var answearTask1_11;
+            if (reg_calcAnswer === "4.3") {
+              answearTask1_11 = 1;
+            } else {
+              answearTask1_11 = 0;
+            }
+          } else {
+            answearTask1_11 = 0;
+          }
+
+          var first_pay_calcAnswer = tab1BDParts[12];
+          var first_pay_calcPoint = first_pay_calcAnswer;
+          first_pay_calcPoint = tuskDonePoint(first_pay_calcPoint);
+          if (first_pay_calcAnswer !== "" || first_pay_calcAnswer !== undefined) {
+            var answearTask1_12;
+            if (first_pay_calcAnswer === "19.96" || first_pay_calcAnswer === "20") {
+              answearTask1_12 = 1;
+            } else {
+              answearTask1_12 = 0;
+            }
+          } else {
+            answearTask1_12 = 0;
+          }
+
+          var retention_calcAnswer = tab1BDParts[13];
+          var retention_calcPoint = retention_calcAnswer;
+          retention_calcPoint = tuskDonePoint(retention_calcPoint);
+          if (retention_calcAnswer !== "" || retention_calcAnswer !== undefined) {
+            var answearTask1_13;
+            if (retention_calcAnswer === "78.78" || retention_calcAnswer === "78.8" || retention_calcAnswer === "79") {
+              answearTask1_13 = 1;
+            } else {
+              answearTask1_13 = 0;
+            }
+          } else {
+            answearTask1_13 = 0;
+          }
+
+          var mashtabAnswer = tab1BDParts[14];
+          var mashtabPoint = mashtabAnswer;
+          mashtabPoint = tuskDonePoint(mashtabPoint);
+          var task1_14 = ["one"];
+          var answearTask1_14 = pointsCounter(mashtabAnswer, task1_14);
+
+          var fail_doAnswer = tab1BDParts[15];
+          var fail_doPoint = fail_doAnswer;
+          fail_doPoint = tuskDonePoint(fail_doPoint);
+          var task1_15 = ["three"];
+          var answearTask1_15 = pointsCounter(fail_doAnswer, task1_15);
+
+        // answearTask1_1
+        // answearTask1_2
+        // answearTask1_3
+        // answearTask1_5
+        // answearTask1_6
+        // answearTask1_7
+        // answearTask1_8
+        // answearTask1_10
+        // answearTask1_11
+        // answearTask1_12
+        // answearTask1_13
+        // answearTask1_14
+        // answearTask1_15
+
+        // china_knowPoint
+        // team_endPoint
+        // local_conPoint
+        // china_thinkPoint
+        // cheap_varPoint
+        // domenPoint
+        // socPoint
+        // min_testPoint
+        // blogersPoint
+        // successPoint
+        // reg_calcPoint
+        // first_pay_calcPoint
+        // retention_calcPoint
+        // mashtabPoint
+        // fail_doPoint
+
+
+        //   var factors_prioritiesAnswer = tab1BDParts[13];
+        //   var factors_prioritiesPoint = factors_prioritiesAnswer;
+        //   factors_prioritiesPoint = tuskDonePoint(factors_prioritiesPoint);
+        //   var answearTask1_13 = dragDonePoint(factors_prioritiesAnswer);
+
+        } else {
+            answearTask1_1 = 0;
+            answearTask1_2 = 0;
+            answearTask1_3 = 0;
+            answearTask1_5 = 0;
+            answearTask1_6 = 0;
+            answearTask1_7 = 0;
+            answearTask1_8 = 0;
+            answearTask1_10 = 0;
+            answearTask1_11 = 0;
+            answearTask1_12 = 0;
+            answearTask1_13 = 0;
+            answearTask1_14 = 0;
+            answearTask1_15 = 0;
+
+            china_knowPoint = 0;
+            team_endPoint = 0;
+            local_conPoint = 0;
+            china_thinkPoint = 0;
+            cheap_varPoint = 0;
+            domenPoint = 0;
+            socPoint = 0;
+            min_testPoint = 0;
+            blogersPoint = 0;
+            successPoint = 0;
+            reg_calcPoint = 0;
+            first_pay_calcPoint = 0;
+            retention_calcPoint = 0;
+            mashtabPoint = 0;
+            fail_doPoint = 0;
+        }
+
+        if (tab2BDVal !== "" && tab2BDVal !== undefined) {
+          var tab2BDParts = tab2BDVal.split("|/|");
+
+        //   var pestleAnswer = tab2BDParts[1];
+        //   var pestlePoint = pestleAnswer;
+        //   pestlePoint = tuskDonePoint(pestlePoint);
+        //   var task2_1 = ["two"];
+        //   var answearTask2_1 = pointsCounter(pestleAnswer, task2_1);
+
+        //   var decisionAnswer = tab2BDParts[2];
+        //   var decisionPoint = decisionAnswer;
+        //   decisionPoint = tuskDonePoint(decisionPoint);
+        //   var task2_2 = ["two"];
+        //   var answearTask2_2 = pointsCounter(decisionAnswer, task2_2);
+
+        //   var decision_twoAnswer = tab2BDParts[3];
+        //   var decision_twoPoint = decision_twoAnswer;
+        //   decision_twoPoint = tuskDonePoint(decision_twoPoint);
+        //   var task2_3 = ["four"];
+        //   var answearTask2_3 = pointsCounter(decision_twoAnswer, task2_3);
+
+        //   var factors_priorities_twoAnswer = tab2BDParts[4];
+        //   var factors_priorities_twoPoint = factors_priorities_twoAnswer;
+        //   factors_priorities_twoPoint = tuskDonePoint(
+        //     factors_priorities_twoPoint
+        //   );
+        //   var answearTask2_4 = dragDonePoint(factors_priorities_twoAnswer);
+
+        //   var legal_factorsAnswer = tab2BDParts[5];
+        //   var legal_factorsPoint = legal_factorsAnswer;
+        //   legal_factorsPoint = tuskDonePoint(legal_factorsPoint);
+        //   var task2_5 = ["one"];
+        //   var answearTask2_5 = pointsCounter(legal_factorsAnswer, task2_5);
+
+        //   var teamAnswer = tab2BDParts[6];
+        //   var teamPoint = teamAnswer;
+        //   teamPoint = tuskDonePoint(teamPoint);
+        //   var task2_6 = ["two"];
+        //   var answearTask2_6 = pointsCounter(teamAnswer, task2_6);
+
+        //   var team_txtAnswer = tab2BDParts[7];
+        //   var team_txtPoint = team_txtAnswer;
+        //   team_txtPoint = tuskDonePoint(team_txtPoint);
+
+        //   var structureAnswer = tab2BDParts[8];
+        //   var structurePoint = structureAnswer;
+        //   structurePoint = tuskDonePoint(structurePoint);
+        //   var task2_8 = ["two"];
+        //   var answearTask2_8 = pointsCounter(structureAnswer, task2_8);
+
+        //   var signalAnswer = tab2BDParts[9];
+        //   var signalPoint = signalAnswer;
+        //   signalPoint = tuskDonePoint(signalPoint);
+        //   var task2_9;
+        //   if (signalAnswer === "two") {
+        //     task2_9 = ["two"];
+        //   } else if (signalAnswer === "three") {
+        //     task2_9 = ["three"];
+        //   } else {
+        //     task2_9 = ["two"];
+        //   }
+        //   var answearTask2_9 = pointsCounter(signalAnswer, task2_9);
+
+        //   var china_txtAnswer = tab2BDParts[10];
+        //   var china_txtPoint = china_txtAnswer;
+        //   china_txtPoint = tuskDonePoint(china_txtPoint);
+
+        //   var believeAnswer = tab2BDParts[11];
+        //   var believePoint = believeAnswer;
+        //   believePoint = tuskDonePoint(believePoint);
+        //   var task2_11 = ["two"];
+        //   var answearTask2_11 = pointsCounter(believeAnswer, task2_11);
+
+        //   var china_risks_txtAnswer = tab2BDParts[12];
+        //   var china_risks_txtPoint = china_risks_txtAnswer;
+        //   china_risks_txtPoint = tuskDonePoint(china_risks_txtPoint);
+        } else {
+        //   pestlePoint = 0;
+        //   decisionPoint = 0;
+        //   decision_twoPoint = 0;
+        //   factors_priorities_twoPoint = 0;
+        //   legal_factorsPoint = 0;
+        //   teamPoint = 0;
+        //   team_txtPoint = 0;
+        //   structurePoint = 0;
+        //   signalPoint = 0;
+        //   china_txtPoint = 0;
+        //   believePoint = 0;
+        //   china_risks_txtPoint = 0;
+
+        //   answearTask2_1 = 0;
+        //   answearTask2_2 = 0;
+        //   answearTask2_3 = 0;
+        //   answearTask2_4 = 0;
+        //   answearTask2_5 = 0;
+        //   answearTask2_6 = 0;
+        //   answearTask2_8 = 0;
+        //   answearTask2_9 = 0;
+        //   answearTask2_11 = 0;
+        }
+
+        var tasksDone =
+            china_knowPoint +
+            team_endPoint +
+            local_conPoint +
+            china_thinkPoint +
+            cheap_varPoint +
+            domenPoint +
+            socPoint +
+            min_testPoint +
+            blogersPoint +
+            successPoint +
+            reg_calcPoint +
+            first_pay_calcPoint +
+            retention_calcPoint +
+            mashtabPoint +
+            fail_doPoint;
+
+        document.querySelector(
+          '.middle_content[lesson="' + linkId + '"] .tasks_done'
+        ).innerHTML = tasksDone;
+
+        var tasksPoints =
+            answearTask1_1 +
+            answearTask1_2 +
+            answearTask1_3 +
+            answearTask1_5 +
+            answearTask1_6 +
+            answearTask1_7 +
+            answearTask1_8 +
+            answearTask1_10 +
+            answearTask1_11 +
+            answearTask1_12 +
+            answearTask1_13 +
+            answearTask1_14 +
+            answearTask1_15;
+
+        document.querySelector(
+          '.middle_content[lesson="' + linkId + '"] .right_answears'
+        ).innerHTML = tasksPoints;
+
+        var pointsTarget = 38;
+        var pointspercentProgress = (100 / pointsTarget) * tasksPoints;
+        pointspercentProgress = Math.round(pointspercentProgress);
+
+        document.querySelector(
+          '.middle_content[lesson="' + linkId + '"] .percent_aswear'
+        ).innerHTML = pointspercentProgress;
+
+        // -----------------
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }
+
   function thirteenthLesson(linkId) {
     (async () => {
       try {
