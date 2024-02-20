@@ -4726,6 +4726,8 @@ if (url.includes("progress")) {
         twelfthLesson(linkId);
       } else if (linkId === "thirteenth-lesson") {
         thirteenthLesson(linkId);
+      } else if (linkId === "fourteenth-lesson") {
+        fourteenthLesson(linkId);
       } 
       // else if (linkId === "eleventh-lesson") {
       //   eleventhLesson(linkId);
