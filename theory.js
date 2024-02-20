@@ -68,7 +68,7 @@ function sideBarAvailable(customPass) {
         // ||
         // user_email === "aliona.diatlovskaya@gmail.com"
       ) {
-        lessonspass = 13;
+        lessonspass = 14;
       }
       // console.log(lessonspass);
       getSideProgress(lessonspass);
@@ -132,6 +132,8 @@ function prevTheory(num) {
     prevTheoryNum();
   } else if (num - 1 === 12 && elements.length - 1 === 12) {
     prevTheoryNum();
+  } else if (num - 1 === 13 && elements.length - 1 === 13) {
+    prevTheoryNum();
   }
 }
 
@@ -150,6 +152,7 @@ function getUserInfo() {
     collection_id11: "6556071b08de84914fd787a2",
     collection_id12: "655b23d09365d880eb114243",
     collection_id13: "656c7c06998532066a3e134d",
+    collection_id14: "6589fffff1b468de2af19b66",
     user_email: user_email,
   };
 
@@ -286,6 +289,16 @@ function getUserInfo() {
           tab2theory13 = undefined;
         }
 
+        var tab1theory14;
+        var tab2theory14;
+        if (data[13].data !== undefined) {
+          tab1theory14 = data[13].data.fieldData.tab1theory;
+          tab2theory14 = data[13].data.fieldData.tab2theory;
+        } else {
+          tab1theory14 = undefined;
+          tab2theory14 = undefined;
+        }
+
         function introProgress(val, end, tab, lesson) {
           if (val > 0 && val !== "" && val !== undefined) {
             var targetElement = document.querySelector(
@@ -407,6 +420,12 @@ function getUserInfo() {
         }
         if (tab2theory13 !== "" && tab2theory13 !== undefined) {
           introProgress(tab2theory13, 2, "tab2", "thirteenth");
+        }
+        if (tab1theory14 !== "" && tab1theory14 !== undefined) {
+            introProgress(tab1theory14, 4, "tab1", "fourteenth");
+        }
+        if (tab2theory14 !== "" && tab2theory14 !== undefined) {
+            introProgress(tab2theory14, 2, "tab2", "fourteenth");
         }
 
         if (
@@ -729,6 +748,32 @@ function getUserInfo() {
         } else {
           prevTheory(13);
         }
+
+        if (tab1theory14 !== undefined) {
+            console.log(tab1theory14);
+            console.log(tab2theory14);
+            if (
+              tab1theory14 > 3 &&
+              tab1theory14 !== "" &&
+              tab1theory14 !== undefined &&
+              tab2theory14 > 0 &&
+              tab2theory14 !== "" &&
+              tab2theory14 !== undefined
+            ) {
+              availableLinks("thirteenthl_tab2");
+              activetab("thirteenthl_tab2", "tab2", "thirteenth");
+            } else if (
+              (tab1theory14 === "" || tab1theory14 === undefined) &&
+              (tab2theory14 === "" || tab2theory14 === undefined)
+            ) {
+              prevTheory();
+            } else {
+              availableLinks("thirteenthl_tab1");
+              activetab("thirteenthl_tab1", "tab1", "thirteenth");
+            }
+          } else {
+            prevTheory(14);
+          }
 
         // console.log(tab1theory2);
       } else {
