@@ -333,10 +333,10 @@ if (url.includes("progress")) {
           var task2_5 = ["two"];
           var answearTask2_5 = pointsCounter(siaAnswer, task2_5);
 
-          var factors_prioritiesAnswer = tab1BDParts[6];
+          var factors_prioritiesAnswer = tab2BDParts[6];
           var factors_prioritiesPoint = factors_prioritiesAnswer;
           factors_prioritiesPoint = tuskDonePoint(factors_prioritiesPoint);
-          var answearTask1_6 = dragDonePoint(factors_prioritiesAnswer);
+          var answearTask2_6 = dragDonePoint(factors_prioritiesAnswer);
 
           var investigation_txtAnswer = tab2BDParts[7];
           var investigation_txtPoint = investigation_txtAnswer;
@@ -365,7 +365,7 @@ if (url.includes("progress")) {
             answearTask2_1 = 0;
             answearTask2_2 = 0;
             answearTask2_5 = 0;
-            answearTask1_6 = 0;
+            answearTask2_6 = 0;
             answearTask2_8 = 0;
             answearTask2_10 = 0;
             force_majeurePoint = 0;
@@ -430,7 +430,7 @@ if (url.includes("progress")) {
             answearTask2_1 +
             answearTask2_2 +
             answearTask2_5 +
-            answearTask1_6 +
+            answearTask2_6 +
             answearTask2_8 +
             answearTask2_10;
 
@@ -451,7 +451,7 @@ if (url.includes("progress")) {
             answearTask2_1,
             answearTask2_2,
             answearTask2_5,
-            answearTask1_6,
+            answearTask2_6,
             answearTask2_8,
             answearTask2_10
         );
