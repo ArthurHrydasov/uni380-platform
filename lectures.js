@@ -272,42 +272,6 @@ if (url.includes("progress")) {
           var task1_15 = ["three"];
           var answearTask1_15 = pointsCounter(fail_doAnswer, task1_15);
 
-        // answearTask1_1
-        // answearTask1_2
-        // answearTask1_3
-        // answearTask1_5
-        // answearTask1_6
-        // answearTask1_7
-        // answearTask1_8
-        // answearTask1_10
-        // answearTask1_11
-        // answearTask1_12
-        // answearTask1_13
-        // answearTask1_14
-        // answearTask1_15
-
-        // china_knowPoint
-        // team_endPoint
-        // local_conPoint
-        // china_thinkPoint
-        // cheap_varPoint
-        // domenPoint
-        // socPoint
-        // min_testPoint
-        // blogersPoint
-        // successPoint
-        // reg_calcPoint
-        // first_pay_calcPoint
-        // retention_calcPoint
-        // mashtabPoint
-        // fail_doPoint
-
-
-        //   var factors_prioritiesAnswer = tab1BDParts[13];
-        //   var factors_prioritiesPoint = factors_prioritiesAnswer;
-        //   factors_prioritiesPoint = tuskDonePoint(factors_prioritiesPoint);
-        //   var answearTask1_13 = dragDonePoint(factors_prioritiesAnswer);
-
         } else {
             answearTask1_1 = 0;
             answearTask1_2 = 0;
@@ -343,102 +307,78 @@ if (url.includes("progress")) {
         if (tab2BDVal !== "" && tab2BDVal !== undefined) {
           var tab2BDParts = tab2BDVal.split("|/|");
 
-        //   var pestleAnswer = tab2BDParts[1];
-        //   var pestlePoint = pestleAnswer;
-        //   pestlePoint = tuskDonePoint(pestlePoint);
-        //   var task2_1 = ["two"];
-        //   var answearTask2_1 = pointsCounter(pestleAnswer, task2_1);
+          var force_majeureAnswer = tab2BDParts[1];
+          var force_majeurePoint = force_majeureAnswer;
+          force_majeurePoint = tuskDonePoint(force_majeurePoint);
+          var task2_1 = ["four"];
+          var answearTask2_1 = pointsCounter(force_majeureAnswer, task2_1);
 
-        //   var decisionAnswer = tab2BDParts[2];
-        //   var decisionPoint = decisionAnswer;
-        //   decisionPoint = tuskDonePoint(decisionPoint);
-        //   var task2_2 = ["two"];
-        //   var answearTask2_2 = pointsCounter(decisionAnswer, task2_2);
+          var visaAnswer = tab2BDParts[2];
+          var visaPoint = visaAnswer;
+          visaPoint = tuskDonePoint(visaPoint);
+          var task2_2 = ["one"];
+          var answearTask2_2 = pointsCounter(visaAnswer, task2_2);
 
-        //   var decision_twoAnswer = tab2BDParts[3];
-        //   var decision_twoPoint = decision_twoAnswer;
-        //   decision_twoPoint = tuskDonePoint(decision_twoPoint);
-        //   var task2_3 = ["four"];
-        //   var answearTask2_3 = pointsCounter(decision_twoAnswer, task2_3);
+          var visa_txtAnswer = tab2BDParts[3];
+          var visa_txtPoint = visa_txtAnswer;
+          visa_txtPoint = tuskDonePoint(visa_txtPoint);
 
-        //   var factors_priorities_twoAnswer = tab2BDParts[4];
-        //   var factors_priorities_twoPoint = factors_priorities_twoAnswer;
-        //   factors_priorities_twoPoint = tuskDonePoint(
-        //     factors_priorities_twoPoint
-        //   );
-        //   var answearTask2_4 = dragDonePoint(factors_priorities_twoAnswer);
+          var office_txtAnswer = tab2BDParts[4];
+          var office_txtPoint = office_txtAnswer;
+          office_txtPoint = tuskDonePoint(office_txtPoint);
 
-        //   var legal_factorsAnswer = tab2BDParts[5];
-        //   var legal_factorsPoint = legal_factorsAnswer;
-        //   legal_factorsPoint = tuskDonePoint(legal_factorsPoint);
-        //   var task2_5 = ["one"];
-        //   var answearTask2_5 = pointsCounter(legal_factorsAnswer, task2_5);
+          var siaAnswer = tab2BDParts[5];
+          var siaPoint = siaAnswer;
+          siaPoint = tuskDonePoint(siaPoint);
+          var task2_5 = ["two"];
+          var answearTask2_5 = pointsCounter(siaAnswer, task2_5);
 
-        //   var teamAnswer = tab2BDParts[6];
-        //   var teamPoint = teamAnswer;
-        //   teamPoint = tuskDonePoint(teamPoint);
-        //   var task2_6 = ["two"];
-        //   var answearTask2_6 = pointsCounter(teamAnswer, task2_6);
+          var factors_prioritiesAnswer = tab1BDParts[6];
+          var factors_prioritiesPoint = factors_prioritiesAnswer;
+          factors_prioritiesPoint = tuskDonePoint(factors_prioritiesPoint);
+          var answearTask1_6 = dragDonePoint(factors_prioritiesAnswer);
 
-        //   var team_txtAnswer = tab2BDParts[7];
-        //   var team_txtPoint = team_txtAnswer;
-        //   team_txtPoint = tuskDonePoint(team_txtPoint);
+          var investigation_txtAnswer = tab2BDParts[7];
+          var investigation_txtPoint = investigation_txtAnswer;
+          investigation_txtPoint = tuskDonePoint(investigation_txtPoint);
 
-        //   var structureAnswer = tab2BDParts[8];
-        //   var structurePoint = structureAnswer;
-        //   structurePoint = tuskDonePoint(structurePoint);
-        //   var task2_8 = ["two"];
-        //   var answearTask2_8 = pointsCounter(structureAnswer, task2_8);
+          var contractAnswer = tab2BDParts[8];
+          var contractPoint = contractAnswer;
+          contractPoint = tuskDonePoint(contractPoint);
+          var task2_8 = ["two", "three", "four"];
+          var answearTask2_8 = pointsCounter(contractAnswer, task2_8);
 
-        //   var signalAnswer = tab2BDParts[9];
-        //   var signalPoint = signalAnswer;
-        //   signalPoint = tuskDonePoint(signalPoint);
-        //   var task2_9;
-        //   if (signalAnswer === "two") {
-        //     task2_9 = ["two"];
-        //   } else if (signalAnswer === "three") {
-        //     task2_9 = ["three"];
-        //   } else {
-        //     task2_9 = ["two"];
-        //   }
-        //   var answearTask2_9 = pointsCounter(signalAnswer, task2_9);
+          var sia_sayAnswer = tab2BDParts[9];
+          var sia_sayPoint = sia_sayAnswer;
+          sia_sayPoint = tuskDonePoint(sia_sayPoint);
 
-        //   var china_txtAnswer = tab2BDParts[10];
-        //   var china_txtPoint = china_txtAnswer;
-        //   china_txtPoint = tuskDonePoint(china_txtPoint);
+          var sia_doAnswer = tab2BDParts[10];
+          var sia_doPoint = sia_doAnswer;
+          sia_doPoint = tuskDonePoint(sia_doPoint);
+          var task2_10 = ["one", "three", "four"];
+          var answearTask2_10 = pointsCounter(sia_doAnswer, task2_10);
 
-        //   var believeAnswer = tab2BDParts[11];
-        //   var believePoint = believeAnswer;
-        //   believePoint = tuskDonePoint(believePoint);
-        //   var task2_11 = ["two"];
-        //   var answearTask2_11 = pointsCounter(believeAnswer, task2_11);
-
-        //   var china_risks_txtAnswer = tab2BDParts[12];
-        //   var china_risks_txtPoint = china_risks_txtAnswer;
-        //   china_risks_txtPoint = tuskDonePoint(china_risks_txtPoint);
+          var pay_halfAnswer = tab2BDParts[11];
+          var pay_halfPoint = pay_halfAnswer;
+          pay_halfPoint = tuskDonePoint(pay_halfPoint);
         } else {
-        //   pestlePoint = 0;
-        //   decisionPoint = 0;
-        //   decision_twoPoint = 0;
-        //   factors_priorities_twoPoint = 0;
-        //   legal_factorsPoint = 0;
-        //   teamPoint = 0;
-        //   team_txtPoint = 0;
-        //   structurePoint = 0;
-        //   signalPoint = 0;
-        //   china_txtPoint = 0;
-        //   believePoint = 0;
-        //   china_risks_txtPoint = 0;
-
-        //   answearTask2_1 = 0;
-        //   answearTask2_2 = 0;
-        //   answearTask2_3 = 0;
-        //   answearTask2_4 = 0;
-        //   answearTask2_5 = 0;
-        //   answearTask2_6 = 0;
-        //   answearTask2_8 = 0;
-        //   answearTask2_9 = 0;
-        //   answearTask2_11 = 0;
+            answearTask2_1 = 0;
+            answearTask2_2 = 0;
+            answearTask2_5 = 0;
+            answearTask1_6 = 0;
+            answearTask2_8 = 0;
+            answearTask2_10 = 0;
+            force_majeurePoint = 0;
+            visaPoint = 0;
+            visa_txtPoint = 0;
+            office_txtPoint = 0;
+            siaPoint = 0;
+            factors_prioritiesPoint = 0;
+            investigation_txtPoint = 0;
+            contractPoint = 0;
+            sia_sayPoint = 0;
+            sia_doPoint = 0;
+            pay_halfPoint = 0;
         }
 
         var tasksDone =
@@ -456,7 +396,18 @@ if (url.includes("progress")) {
             first_pay_calcPoint +
             retention_calcPoint +
             mashtabPoint +
-            fail_doPoint;
+            fail_doPoint + 
+            force_majeurePoint + 
+            visaPoint + 
+            visa_txtPoint + 
+            office_txtPoint + 
+            siaPoint + 
+            factors_prioritiesPoint + 
+            investigation_txtPoint + 
+            contractPoint + 
+            sia_sayPoint + 
+            sia_doPoint + 
+            pay_halfPoint;
 
         document.querySelector(
           '.middle_content[lesson="' + linkId + '"] .tasks_done'
@@ -475,7 +426,13 @@ if (url.includes("progress")) {
             answearTask1_12 +
             answearTask1_13 +
             answearTask1_14 +
-            answearTask1_15;
+            answearTask1_15 +
+            answearTask2_1 +
+            answearTask2_2 +
+            answearTask2_5 +
+            answearTask1_6 +
+            answearTask2_8 +
+            answearTask2_10;
 
         document.querySelector(
           '.middle_content[lesson="' + linkId + '"] .right_answears'
