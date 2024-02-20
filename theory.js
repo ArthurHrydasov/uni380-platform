@@ -724,8 +724,6 @@ function getUserInfo() {
         }
 
         if (tab1theory13 !== undefined) {
-          console.log(tab1theory13);
-          console.log(tab2theory13);
           if (
             tab1theory13 > 3 &&
             tab1theory13 !== "" &&
@@ -760,16 +758,16 @@ function getUserInfo() {
               tab2theory14 !== "" &&
               tab2theory14 !== undefined
             ) {
-              availableLinks("thirteenthl_tab2");
-              activetab("thirteenthl_tab2", "tab2", "thirteenth");
+              availableLinks("fourteenthl_tab2");
+              activetab("fourteenthl_tab2", "tab2", "fourteenth");
             } else if (
               (tab1theory14 === "" || tab1theory14 === undefined) &&
               (tab2theory14 === "" || tab2theory14 === undefined)
             ) {
               prevTheory();
             } else {
-              availableLinks("thirteenthl_tab1");
-              activetab("thirteenthl_tab1", "tab1", "thirteenth");
+              availableLinks("fourteenthl_tab1");
+              activetab("fourteenthl_tab1", "tab1", "fourteenth");
             }
           } else {
             prevTheory(14);
