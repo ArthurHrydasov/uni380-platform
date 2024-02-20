@@ -389,6 +389,8 @@ function sideBarAvailable(customPass) {
               span.textContent = "права";
             } else if (text === "дізнався") {
               span.textContent = "дізналася";
+            } else if (text === "впевнений") {
+              span.textContent = "впевнена";
             }
           });
         }
