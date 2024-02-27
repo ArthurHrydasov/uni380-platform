@@ -113,6 +113,7 @@ function prevTheory(num) {
   let numberText = ['', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth'];
   let numText = numberText[num];
   var blockElement = document.querySelector('.middle_content[lesson="' + numText + '-lesson"]');
+  blockElement.classList.add('hide_other');
   blockElement.appendChild(divElement);
 }
 
