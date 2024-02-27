@@ -100,8 +100,11 @@ function sideBarAvailable(customPass) {
 function prevTheory(num) {
   console.log('empty');
   let divElement = document.createElement('div');
-  divElement.classList.add('empty_theory', 'blop', 'blop_task', 'next_visible', 'blop_animate', 'heading', 'h_main');
-  divElement.textContent = "Ви ще не відкрили теорію в цьому уроці";
+  divElement.classList.add('empty_theory', 'blop', 'blop_task', 'next_visible', 'blop_animate');
+  let divContent = document.createElement('div');
+  divContent.classList.add('heading', 'h_main');
+  divContent.textContent = "Ви ще не відкрили теорію в цьому уроці";
+  divElement.appendChild(divContent);
   let linkElement = document.createElement('a');
   linkElement.href = '/'; // Задайте URL для вашого посилання
   linkElement.textContent = 'Симулятор'; // Текст посилання
