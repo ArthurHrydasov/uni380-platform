@@ -98,7 +98,14 @@ function sideBarAvailable(customPass) {
 }
 
 function prevTheory(num) {
-   console.log('empty');
+  console.log('empty');
+  let divElement = document.createElement('div');
+  divElement.classList.add('empty_theory');
+  divElement.textContent = "Ви ще не відкрили теорію в цьому уроці.";
+  let numberText = ['', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth'];
+  let numText = numberText[num];
+  var blockElement = document.querySelector('.middle_content[' + numText + '-lesson]');
+  blockElement.appendChild(divElement);
 }
 
 function getUserInfo() {
@@ -307,90 +314,42 @@ function getUserInfo() {
             }
           }
         }
-        if (introtheory !== "" && introtheory !== undefined) {
-          introProgress(introtheory, 1, "intro", "first");
-        }
-        if (tab1theory !== "" && tab1theory !== undefined) {
-          introProgress(tab1theory, 5, "tab1", "first");
-        }
-        if (tab2theory !== "" && tab2theory !== undefined) {
-          introProgress(tab2theory, 3, "tab2", "first");
-        }
-        if (tab1theory2 !== "" && tab1theory2 !== undefined) {
-          introProgress(tab1theory2, 3, "tab1", "second");
-        }
-        if (tab2theory2 !== "" && tab2theory2 !== undefined) {
-          introProgress(tab2theory2, 2, "tab2", "second");
-        }
-        if (tab1theory3 !== "" && tab1theory3 !== undefined) {
-          introProgress(tab1theory3, 4, "tab1", "third");
-        }
-        if (tab2theory3 !== "" && tab2theory3 !== undefined) {
-          introProgress(tab2theory3, 2, "tab2", "third");
-        }
-        if (tab3theory3 !== "" && tab3theory3 !== undefined) {
-          introProgress(tab3theory3, 1, "tab3", "third");
-        }
-        if (tab1theory4 !== "" && tab1theory4 !== undefined) {
-          introProgress(tab1theory4, 2, "tab1", "fourth");
-        }
-        if (tab2theory4 !== "" && tab2theory4 !== undefined) {
-          introProgress(tab2theory4, 7, "tab2", "fourth");
-        }
-        if (tab1theory5 !== "" && tab1theory5 !== undefined) {
-          introProgress(tab1theory5, 2, "tab1", "fiveth");
-        }
-        if (tab2theory5 !== "" && tab2theory5 !== undefined) {
-          introProgress(tab2theory5, 4, "tab2", "fiveth");
-        }
-        if (tab1theory6 !== "" && tab1theory6 !== undefined) {
-          introProgress(tab1theory6, 3, "tab1", "sixth");
-        }
-        if (tab1theory7 !== "" && tab1theory7 !== undefined) {
-          introProgress(tab1theory7, 4, "tab1", "seventh");
-        }
-        if (tab1theory8 !== "" && tab1theory8 !== undefined) {
-          introProgress(tab1theory8, 2, "tab1", "eighth");
-        }
-        if (tab2theory8 !== "" && tab2theory8 !== undefined) {
-          introProgress(tab2theory8, 1, "tab2", "eighth");
-        }
-        if (tab3theory8 !== "" && tab3theory8 !== undefined) {
-          introProgress(tab3theory8, 3, "tab3", "eighth");
-        }
-        if (tab1theory9 !== "" && tab1theory9 !== undefined) {
-          introProgress(tab1theory9, 2, "tab1", "ninth");
-        }
-        if (tab2theory9 !== "" && tab2theory9 !== undefined) {
-          introProgress(tab2theory9, 3, "tab2", "ninth");
-        }
-        if (tab1theory10 !== "" && tab1theory10 !== undefined) {
-          introProgress(tab1theory10, 5, "tab1", "tenth");
-        }
-        if (tab1theory11 !== "" && tab1theory11 !== undefined) {
-          introProgress(tab1theory11, 4, "tab1", "eleventh");
-        }
-        if (tab2theory11 !== "" && tab2theory11 !== undefined) {
-          introProgress(tab2theory11, 4, "tab2", "eleventh");
-        }
-        if (tab1theory12 !== "" && tab1theory12 !== undefined) {
-          introProgress(tab1theory12, 3, "tab1", "twelfth");
-        }
-        if (tab2theory12 !== "" && tab2theory12 !== undefined) {
-          introProgress(tab2theory12, 1, "tab2", "twelfth");
-        }
-        if (tab1theory13 !== "" && tab1theory13 !== undefined) {
-          introProgress(tab1theory13, 4, "tab1", "thirteenth");
-        }
-        if (tab2theory13 !== "" && tab2theory13 !== undefined) {
-          introProgress(tab2theory13, 2, "tab2", "thirteenth");
-        }
-        if (tab1theory14 !== "" && tab1theory14 !== undefined) {
-            introProgress(tab1theory14, 4, "tab1", "fourteenth");
-        }
-        if (tab2theory14 !== "" && tab2theory14 !== undefined) {
-            introProgress(tab2theory14, 2, "tab2", "fourteenth");
-        }
+        const theories = [
+            { theory: introtheory, weight: 1, tab: "intro", order: "first" },
+            { theory: tab1theory, weight: 5, tab: "tab1", order: "first" },
+            { theory: tab2theory, weight: 3, tab: "tab2", order: "first" },
+            { theory: tab1theory2, weight: 3, tab: "tab1", order: "second" },
+            { theory: tab2theory2, weight: 2, tab: "tab2", order: "second" },
+            { theory: tab1theory3, weight: 4, tab: "tab1", order: "third" },
+            { theory: tab2theory3, weight: 2, tab: "tab2", order: "third" },
+            { theory: tab3theory3, weight: 1, tab: "tab3", order: "third" },
+            { theory: tab1theory4, weight: 2, tab: "tab1", order: "fourth" },
+            { theory: tab2theory4, weight: 7, tab: "tab2", order: "fourth" },
+            { theory: tab1theory5, weight: 2, tab: "tab1", order: "fiveth" },
+            { theory: tab2theory5, weight: 4, tab: "tab2", order: "fiveth" },
+            { theory: tab1theory6, weight: 3, tab: "tab1", order: "sixth" },
+            { theory: tab1theory7, weight: 4, tab: "tab1", order: "seventh" },
+            { theory: tab1theory8, weight: 2, tab: "tab1", order: "eighth" },
+            { theory: tab2theory8, weight: 1, tab: "tab2", order: "eighth" },
+            { theory: tab3theory8, weight: 3, tab: "tab3", order: "eighth" },
+            { theory: tab1theory9, weight: 2, tab: "tab1", order: "ninth" },
+            { theory: tab2theory9, weight: 3, tab: "tab2", order: "ninth" },
+            { theory: tab1theory10, weight: 5, tab: "tab1", order: "tenth" },
+            { theory: tab1theory11, weight: 4, tab: "tab1", order: "eleventh" },
+            { theory: tab2theory11, weight: 4, tab: "tab2", order: "eleventh" },
+            { theory: tab1theory12, weight: 3, tab: "tab1", order: "twelfth" },
+            { theory: tab2theory12, weight: 1, tab: "tab2", order: "twelfth" },
+            { theory: tab1theory13, weight: 4, tab: "tab1", order: "thirteenth" },
+            { theory: tab2theory13, weight: 2, tab: "tab2", order: "thirteenth" },
+            { theory: tab1theory14, weight: 4, tab: "tab1", order: "fourteenth" },
+            { theory: tab2theory14, weight: 2, tab: "tab2", order: "fourteenth" }
+        ];
+        
+        theories.forEach(item => {
+            if (item.theory !== "" && item.theory !== undefined) {
+                introProgress(item.theory, item.weight, item.tab, item.order);
+            }
+        });
 
         if (
           introtheory > 0 &&
@@ -433,7 +392,7 @@ function getUserInfo() {
             (tab1theory2 === "" || tab1theory2 === undefined) &&
             (tab2theory2 === "" || tab2theory2 === undefined)
           ) {
-            prevTheory();
+            prevTheory(2);
           } else {
             availableLinks("secondl_tab1");
             activetab("secondl_tab1", "tab1", "second");
@@ -468,7 +427,7 @@ function getUserInfo() {
             (tab2theory3 === "" || tab2theory3 === undefined) &&
             (tab3theory3 === "" || tab3theory3 === undefined)
           ) {
-            prevTheory();
+            prevTheory(3);
           } else {
             availableLinks("thirdl_tab1");
             activetab("thirdl_tab1", "tab1", "third");
@@ -493,7 +452,7 @@ function getUserInfo() {
             (tab1theory4 === "" || tab1theory4 === undefined) &&
             (tab2theory4 === "" || tab2theory4 === undefined)
           ) {
-            prevTheory();
+            prevTheory(4);
           } else {
             availableLinks("fourthl_tab1");
             activetab("fourthl_tab1", "tab1", "fourth");
@@ -517,7 +476,7 @@ function getUserInfo() {
             (tab1theory5 === "" || tab1theory5 === undefined) &&
             (tab2theory5 === "" || tab2theory5 === undefined)
           ) {
-            prevTheory();
+            prevTheory(5);
           } else {
             availableLinks("fivethl_tab1");
             activetab("fivethl_tab1", "tab1", "fiveth");
@@ -569,7 +528,7 @@ function getUserInfo() {
             (tab2theory8 === "" || tab2theory8 === undefined) &&
             (tab3theory8 === "" || tab3theory8 === undefined)
           ) {
-            prevTheory();
+            prevTheory(8);
           } else {
             availableLinks("eighthl_tab1");
             activetab("eighthl_tab1", "tab1", "eighth");
@@ -593,7 +552,7 @@ function getUserInfo() {
             (tab1theory9 === "" || tab1theory9 === undefined) &&
             (tab2theory9 === "" || tab2theory9 === undefined)
           ) {
-            prevTheory();
+            prevTheory(9);
           } else {
             availableLinks("ninthl_tab1");
             activetab("ninthl_tab1", "tab1", "ninth");
@@ -639,7 +598,7 @@ function getUserInfo() {
             (tab1theory11 === "" || tab1theory11 === undefined) &&
             (tab2theory11 === "" || tab2theory11 === undefined)
           ) {
-            prevTheory();
+            prevTheory(11);
           } else {
             availableLinks("eleventhl_tab1");
             activetab("eleventhl_tab1", "tab1", "eleventh");
@@ -678,7 +637,7 @@ function getUserInfo() {
             (tab1theory12 === "" || tab1theory12 === undefined) &&
             (tab2theory12 === "" || tab2theory12 === undefined)
           ) {
-            prevTheory();
+            prevTheory(12);
           } else {
             availableLinks("twelfthl_tab1");
             activetab("twelfthl_tab1", "tab1", "twelfth");
@@ -702,7 +661,7 @@ function getUserInfo() {
             (tab1theory13 === "" || tab1theory13 === undefined) &&
             (tab2theory13 === "" || tab2theory13 === undefined)
           ) {
-            prevTheory();
+            prevTheory(13);
           } else {
             availableLinks("thirteenthl_tab1");
             activetab("thirteenthl_tab1", "tab1", "thirteenth");
@@ -728,7 +687,7 @@ function getUserInfo() {
               (tab1theory14 === "" || tab1theory14 === undefined) &&
               (tab2theory14 === "" || tab2theory14 === undefined)
             ) {
-              prevTheory();
+              prevTheory(14);
             } else {
               availableLinks("fourteenthl_tab1");
               activetab("fourteenthl_tab1", "tab1", "fourteenth");
