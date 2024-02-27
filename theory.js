@@ -98,43 +98,7 @@ function sideBarAvailable(customPass) {
 }
 
 function prevTheory(num) {
-  var elements = document.querySelectorAll(".side_bar_links_block.available");
-  function prevTheoryNum() {
-    if (elements.length > 0) {
-      var lastElement = elements[elements.length - 1];
-      lastElement.classList.remove("available");
-      lastElement.querySelector(".side_bar_sublinks_block").style.display =
-        "none";
-      lastElement.previousElementSibling.click();
-    }
-  }
-  if (num - 1 === 1 && elements.length - 1 === 1) {
-    prevTheoryNum();
-  } else if (num - 1 === 2 && elements.length - 1 === 2) {
-    prevTheoryNum();
-  } else if (num - 1 === 3 && elements.length - 1 === 3) {
-    prevTheoryNum();
-  } else if (num - 1 === 4 && elements.length - 1 === 4) {
-    prevTheoryNum();
-  } else if (num - 1 === 5 && elements.length - 1 === 5) {
-    prevTheoryNum();
-  } else if (num - 1 === 6 && elements.length - 1 === 6) {
-    prevTheoryNum();
-  } else if (num - 1 === 7 && elements.length - 1 === 7) {
-    prevTheoryNum();
-  } else if (num - 1 === 8 && elements.length - 1 === 8) {
-    prevTheoryNum();
-  } else if (num - 1 === 9 && elements.length - 1 === 9) {
-    prevTheoryNum();
-  } else if (num - 1 === 10 && elements.length - 1 === 10) {
-    prevTheoryNum();
-  } else if (num - 1 === 11 && elements.length - 1 === 11) {
-    prevTheoryNum();
-  } else if (num - 1 === 12 && elements.length - 1 === 12) {
-    prevTheoryNum();
-  } else if (num - 1 === 13 && elements.length - 1 === 13) {
-    prevTheoryNum();
-  }
+   console.log('empty');
 }
 
 function getUserInfo() {
