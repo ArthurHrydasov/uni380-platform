@@ -104,7 +104,7 @@ function prevTheory(num) {
   divElement.textContent = "Ви ще не відкрили теорію в цьому уроці.";
   let numberText = ['', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth'];
   let numText = numberText[num];
-  var blockElement = document.querySelector('.middle_content[' + numText + '-lesson]');
+  var blockElement = document.querySelector('.middle_content[lesson="' + numText + '-lesson"]');
   blockElement.appendChild(divElement);
 }
 
