@@ -100,8 +100,13 @@ function sideBarAvailable(customPass) {
 function prevTheory(num) {
   console.log('empty');
   let divElement = document.createElement('div');
-  divElement.classList.add('empty_theory', 'blop', 'blop_task', 'next_visible', 'blop_animate');
-  divElement.textContent = "Ви ще не відкрили теорію в цьому уроці.";
+  divElement.classList.add('empty_theory', 'blop', 'blop_task', 'next_visible', 'blop_animate', 'heading', 'h_main');
+  divElement.textContent = "Ви ще не відкрили теорію в цьому уроці";
+  let linkElement = document.createElement('a');
+  linkElement.href = '/'; // Задайте URL для вашого посилання
+  linkElement.textContent = 'Симулятор'; // Текст посилання
+  linkElement.classList.add('button_primal');
+  divElement.appendChild(linkElement);
   let numberText = ['', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth'];
   let numText = numberText[num];
   var blockElement = document.querySelector('.middle_content[lesson="' + numText + '-lesson"]');
