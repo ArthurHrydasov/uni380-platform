@@ -113,6 +113,11 @@ function prevTheory(num) {
   let numberText = ['', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth'];
   let numText = numberText[num];
   var blockElement = document.querySelector('.middle_content[lesson="' + numText + '-lesson"]');
+  if (num !== 1) {
+    document.getElementById(numText + 'l_tab1').classList.add("block_empty");
+  } else {
+    document.getElementById('firstl_intro').classList.add("block_empty");
+  }
   blockElement.classList.add('hide_other');
   blockElement.appendChild(divElement);
 }
@@ -697,17 +702,13 @@ function getUserInfo() {
               (tab2theory14 === "" || tab2theory14 === undefined)
             ) {
               prevTheory(14);
-              document.getElementById('fourteenthl_tab1').classList.add("block_empty");
             } else {
               availableLinks("fourteenthl_tab1");
               activetab("fourteenthl_tab1", "tab1", "fourteenth");
             }
           } else {
             prevTheory(14);
-            document.getElementById('fourteenthl_tab1').classList.add("block_empty");
           }
-
-        // console.log(tab1theory2);
       } else {
         window.location.href = "/";
       }
