@@ -696,13 +696,14 @@ function getUserInfo() {
               (tab2theory14 === "" || tab2theory14 === undefined)
             ) {
               prevTheory(14);
-            } 
-            // else {
-             // availableLinks("fourteenthl_tab1");
-             // activetab("fourteenthl_tab1", "tab1", "fourteenth");
-            // }
+              document.getElementById('fourteenthl_tab1').classList.remove("active", "available");
+            } else {
+              availableLinks("fourteenthl_tab1");
+              activetab("fourteenthl_tab1", "tab1", "fourteenth");
+            }
           } else {
             prevTheory(14);
+            document.getElementById('fourteenthl_tab1').classList.remove("active", "available");
           }
 
         // console.log(tab1theory2);
