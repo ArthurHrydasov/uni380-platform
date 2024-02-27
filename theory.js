@@ -100,7 +100,7 @@ function sideBarAvailable(customPass) {
 function prevTheory(num) {
   console.log('empty');
   let divElement = document.createElement('div');
-  divElement.classList.add('empty_theory');
+  divElement.classList.add('empty_theory', 'blop', 'blop_task', 'next_visible', 'blop_animate');
   divElement.textContent = "Ви ще не відкрили теорію в цьому уроці.";
   let numberText = ['', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth', 'thirteenth', 'fourteenth'];
   let numText = numberText[num];
