@@ -46,7 +46,7 @@ function sideBarAvailable(customPass) {
     user_email: user_email,
   };
   // console.log(data);
-  fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/", {
+fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -142,7 +142,7 @@ function getUserInfo() {
   };
 
   // console.log(data);
-  fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/get-all-lesson-info", {
+  fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/get-all-lesson-info", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
