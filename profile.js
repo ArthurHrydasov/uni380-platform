@@ -56,7 +56,7 @@ function getUserInfo(customPass) {
     user_email: user_email
   };
   // console.log(data);
-  fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/", {
+  fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -151,7 +151,7 @@ send_data.addEventListener("click", () => {
       user_avatar: href
     };
     // console.log(data);
-    fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/user", {
+    fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
