@@ -1121,7 +1121,7 @@ buttonWithAttrs.forEach((buttonWithAttr) => {
         user_tab2: dataTab2,
       };
       //console.log(data);
-      fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
+      fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/lesson-info", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1527,7 +1527,7 @@ theoryButtons.forEach((theoryButton) => {
         };
       }
       // console.log(data2);
-      fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/lesson-info", {
+      fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/lesson-info", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
