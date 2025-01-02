@@ -35,7 +35,7 @@ function createFirstLesson() {
   };
   // console.log(data);
 
-  fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/create-first-lesson", {
+  fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/create-first-lesson", {
     // fetch("https://uni380-ece0513571ea.herokuapp.com/create-first-lesson", {
     method: "POST",
     headers: {
@@ -159,7 +159,7 @@ send_data.addEventListener("click", () => {
         user_avatar: href,
       };
       // console.log(data);
-      fetch("https://uni380-ua-f2a8d215b9ab.herokuapp.com/user", {
+      fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/user", {
         // fetch("https://uni380-ece0513571ea.herokuapp.com/user", {
         method: "POST",
         headers: {
