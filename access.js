@@ -650,6 +650,7 @@ function getSideProgress(lessonspass, customChapterCount) {
         }
       } else if (+lessonspass === 14) {
         var fourteenthInfo = await getLessonInfo("6589fffff1b468de2af19b66");
+        console.log(fourteenthInfo);
         var tab1BDVal14 = fourteenthInfo.fieldData.tab1;
         var tab2BDVal14 = fourteenthInfo.fieldData.tab2;
         if (customChapterCount !== "" && customChapterCount !== undefined) {
