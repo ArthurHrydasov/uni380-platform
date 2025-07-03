@@ -74,7 +74,8 @@ if (currentUrl.includes("-lesson")) {
       user_email: user_email,
       lessoncontinue: lessoncontinue,
     };
-    fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/user", {
+    // fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/user", {
+    fetch("https://uni380-ua.onrender.com/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -143,7 +144,8 @@ if (currentUrl.includes("-lesson")) {
       lessonspass: newPass,
     };
     // console.log(data);
-    fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/user", {
+    // fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/user", {
+    fetch("https://uni380-ua.onrender.com/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -219,7 +221,8 @@ async function getLessonInfo(collection_id) {
 
   try {
     const response = await fetch(
-      "https://uni-platform-6db9f53f05ed.herokuapp.com/get-lesson-info",
+      //"https://uni-platform-6db9f53f05ed.herokuapp.com/get-lesson-info",
+      "https://uni380-ua.onrender.com",
       {
         method: "POST",
         headers: {
