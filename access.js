@@ -222,7 +222,7 @@ async function getLessonInfo(collection_id) {
   try {
     const response = await fetch(
       //"https://uni-platform-6db9f53f05ed.herokuapp.com/get-lesson-info",
-      "https://uni380-ua.onrender.com",
+      "https://uni380-ua.onrender.com/get-lesson-info",
       {
         method: "POST",
         headers: {
