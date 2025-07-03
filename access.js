@@ -623,6 +623,7 @@ function getSideProgress(lessonspass, customChapterCount) {
         }
       } else if (+lessonspass === 13) {
         var thirteenthInfo = await getLessonInfo("656c7c06998532066a3e134d");
+        console.log(thirteenthInfo);
         var tab1BDVal13 = thirteenthInfo.fieldData.tab1;
         var tab2BDVal13 = thirteenthInfo.fieldData.tab2;
         if (customChapterCount !== "" && customChapterCount !== undefined) {
