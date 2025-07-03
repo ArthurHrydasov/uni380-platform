@@ -13,7 +13,7 @@ function sideBarAvailable(customPass) {
     user_email: user_email,
   };
   // console.log(data);
-  fetch("https://uni-platform-6db9f53f05ed.herokuapp.com/", {
+  fetch("https://uni380-ua.onrender.com/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -78,7 +78,7 @@ if (url.includes("progress")) {
 
     try {
       const response = await fetch(
-        "https://uni-platform-6db9f53f05ed.herokuapp.com/get-lesson-info",
+        "https://uni380-ua.onrender.com/get-lesson-info",
         {
           method: "POST",
           headers: {
